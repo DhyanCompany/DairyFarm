@@ -59,6 +59,7 @@ button, a{
 }
 
 
+
 .nav-link{
     color: var(--bs-main-color);
     font-weight: bold;
@@ -121,6 +122,8 @@ button, a{
     line-height: 0;
 }
 
+
+
 .custom-shape-divider-bottom-1703654767 svg {
     position: relative;
     display: block;
@@ -130,9 +133,9 @@ button, a{
 
 .custom-shape-divider-bottom-1703654767 .shape-fill {
     fill: #FFFFFF;
-}
+} 
 
-/* top part ends here  */
+/* top part ends here */
 
 .services-section{
     padding: 6rem 0 3rem 0 !important;
@@ -166,6 +169,10 @@ button, a{
 
 .more-info-section .img-section img{
     width: 70%;
+}
+
+.four-image{
+    
 }
 
 .card-box-product{
@@ -290,7 +297,7 @@ button, a{
     display:none;
     position: fixed;
     bottom: 20px;
-    right: 40px;
+    right: 15px;
     z-index:99;
     border: none;
     color: #fff;
