@@ -16,7 +16,18 @@
     --secondary-color: #29a9fd;
     --bs-supporting-color: #C850C0;
     --bs-button-color: #0d6efd;
+    --bs-whatsapp-color: #25D366;
+
 }
+
+.header-color{
+    color: var(--secondary-color);
+}
+.header-color:hover{
+    color: var(--bs-main-color);
+}
+
+
 
 h1, h2,h3,h4,h5{
     font-family: 'Lexend Deca', sans-serif;
@@ -63,6 +74,36 @@ button, a{
 .nav-link{
     color: var(--bs-main-color);
     font-weight: bold;
+  
+    position: relative;
+}
+
+.alink::before,
+.alink::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: var(--secondary-color);
+  transform: scaleX(0);
+  transition: all 0.6s ease;
+}
+
+.alink::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+}
+.alink::after {
+  bottom: 0;
+  right : 0;
+  transform-origin: right;
+}
+
+.alink:hover::before,
+.alink:hover::after {
+  transform: scaleX(1);
+  /* width: 100%; */
 }
 
 .nav-link:hover{
@@ -248,7 +289,18 @@ button, a{
 }
 
 .contact-section .form-section{
-    width :50%;
+    width :80%;
+
+    @media (min-width: 992px) {
+        width: 50%; 
+    }
+}
+.contact-section .whatsapp-button{
+    margin-top: 30px;
+    
+    @media (min-width: 440px) {
+       margin-top: 0; 
+    }
 }
 /* contact section  */
 
@@ -261,6 +313,14 @@ button, a{
 
 .contact-div{
     background-color: #222;
+}
+
+.whatsapp-button{
+    background-color: var(--bs-whatsapp-color);
+}
+
+.whatsapp-button:hover{
+    background-color: var(--bs-whatsapp-color);
 }
 
 .main-footer-section{
@@ -285,7 +345,7 @@ button, a{
 
 .main-footer-section h3{
     text-transform: uppercase;
-    color: var(--bs-main-color);
+    color: var(--secondary-color);
     margin-bottom: 25px;
     font-size: 1.2rem !important;
     font-weight: 600;
@@ -368,3 +428,63 @@ button, a{
     
 } 
 
+
+
+/* Order page starts here */
+
+.order-section .form-section{
+    width :80%;
+
+    @media (min-width: 992px) {
+        width: 50%; 
+    }
+}     
+
+.order-section{
+    position: relative;
+}
+
+.custom-shape-divider-top-1704309761 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1704309761 svg {
+    position: relative;
+    display: block;
+    width: calc(116% + 1.3px);
+    height: 115px;
+}
+
+.custom-shape-divider-top-1704309761 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.form-check-input[type=radio] {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.location{
+   
+    width: 217px;
+
+    @media (min-width: 992px) {
+        width: 150px; 
+    }
+}
+/* Order page starts here */
+
+/* footer starts here */
+
+.order-contact-div{
+    background-color: rgb(236, 236, 236);
+}
+
+
+/* footer ends here */

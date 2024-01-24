@@ -13,31 +13,231 @@
     
 <!-- Navigation starts here -->
 
-    <nav class="navbar navbar-expand-lg bg-color py-5 pt-lg-4" id="home">
-        <div class="container">
-          <a class="navbar-brand text-white fw-bold " href="#">SANTOK DAIRY FARM</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link active text-white " aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#about_us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#product">Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index..html#contact_us">Contact Us</a>
-              </li>              
-            </ul>
-          </div>
-        </div>
-      </nav> 
+<nav class="navbar navbar-expand-lg bg-color py-5 pt-lg-4" id="home">
+  <div class="container">
+    <a class="navbar-brand header-color fw-bold " href="#">SANTOK DAIRY FARM</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="alink nav-link active text-white " aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="alink nav-link" href="index.html#about_us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="alink nav-link" href="index.html#product">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="alink nav-link" href="index.html#contact_us">Contact Us</a>
+        </li>              
+      </ul>
+    </div>
+  </div>
+</nav> 
 
-<!-- Navigation ends here -->
+
+<section class="common-section order-section text-white bg-color  pt-5 pb-5" >
+
+  <!-- <div class="custom-shape-divider-top-1704309761">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+  </svg>
+  </div> -->
+
+  <div class="container text-center fw-bold common-title " id="#Order">
+      <h2 class="common-heading  text-white">PRODUCT ORDER</h2>
+      <hr class="w-25 mx-auto text-white ">
+  </div>
+
+  <div class="container">
+      <div class="form-section mx-auto">
+              <form id="myForm" action="https://formspree.io/f/mayrqqve" method="POST" >
+                  <div class="mb-3">
+                      <div class="row">
+                          <div class="col-lg-6 col-12 ">
+                              <label for="exampleFormUserFirstName" class="form-label">First Name</label>
+                              <input type="text" class="form-control" name="exampleFormUserFirstName" id="exampleFormUserFirstName" placeholder="First Name"  required>
+
+                          </div>
+                          <div class="col-lg-6 col-12">
+                              <label for="exampleFormUserLastName" class="form-label">Last Name</label>
+                              <input type="text" class="form-control" name="exampleFormUserLastName" id="exampleFormUserLastName" placeholder="Last Name" required>
+
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="mb-3 " >
+                      <label for="phone" class="form-label">Phone No:</label>
+                      <div class="input-group">
+                          <span class="input-group-text justify-content-center" style="min-width: 60px; min-height: 30px;">+91</span>
+                          <input type="tel" class="form-control" id="phone" name="Phone"  placeholder="01234 56789" pattern="[0-9]{10}" required autocomplete="tel">
+                      </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="size" class="col-form-label ">Product Size</label>
+                   
+                    <div class="col-auto mb-3 d-flex justify-content-center align-items-center ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="product" id="ghee" checked>
+                            <label class="form-check-label" for="ghee">Ghee</label>
+                        </div>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <select class="form-select" name="size" aria-label="Default select example">
+                            <option selected>500ml </option>
+                            <option value="1">1,000ml </option>
+                            <option value="2">5,000ml </option>
+                            <option value="3">10,000ml </option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto mb-3">
+                      <!-- <label class=" col-form-label">Select Location:</label> -->
+                  
+                      <select class="location justify-content-center  form-select" name="Location" aria-label="Default select example">
+                        <option selected>Mehsana</option>
+                        <option value="1">Ahmedabad</option>
+                        <option value="2">Surat</option>
+                        <option value="3">Deesa</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    
+                  </div>
+                  <button type="submit"   style="width: 164.27px;" class="btn btn-primary  text-white  px-5 py-2 "  data-bs-toggle="tooltip" data-bs-title="Send E-mail">Submit</button>
+                </form>
+          
+      </div>
+  </div>
+
+</section>
+
+<!-- Header ends here -->
+
+
+<!-- footer starts here -->
+
+
+<footer class="main-footer-section bg-white ">
+  <div class="contact-details">
+      <div class="container px-5 mb-5">
+          <div class="row g-0">
+              <div class="col-lg-4 ">
+                  <div class="order-contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                      <a href="https://www.instagram.com/santok_dairy_farm/" target="_blank">
+                          <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                              <img src="./img/instagram.gif" alt="GIF Image" class="img-fluid h-25 w-25">
+                          </div>
+                      </a>
+                      <p class="text-black fw-bold">Follow Us</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 ">
+                  <div class="order-contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
+                      <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <a href="https://wa.me/14372233476" target="_blank">
+                              <img src="./img/whatsapp.gif" alt="GIF Image" class="img-fluid h-25 w-25">
+                          </a>
+                      </div>
+                      <p class="text-black fw-bold ">(+91) 98251 98128</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-4">
+                  <div class="order-contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                      <a href="mailto:santokdairyfa@gmail.com" class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                          <img src="./img/mail.gif" alt="GIF Image" class="img-fluid h-25 w-25">
+                      </a>
+                      <p class="text-black fw-bold">santokdairyfarm@gmail.com</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="row mb-5 ">
+            <div class="col-lg-4 col-md-6 col-12 footer-div text-center  mt-4 mb-4  ">
+              <div>
+                <h3>ABOUT OUR FARM</h3>
+                <P class="text-black">The world required basic needs that is dairy product, now Santok dairy farm has brought fresh milk and ghee for Gujarat state to taste fresh ard organic milk and ghee.</P>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 footer-div text-center mt-4 mb-4 ">
+              <div>
+                <h3>NAVIGATION LINKS</h3>
+                <li><a class="alink nav-link text-black" href="index.html#home">Home</a></li>
+                <li><a class="alink nav-link text-black" href="index.html#product">Product</a></li>
+                <li><a class="alink nav-link text-black" href="index.html#about_us">About</a></li>
+                <li><a class="alink nav-link text-black" href="index.html#contact_us">Contact Us</a></li>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-12 footer-div d-flex justify-content-center  mt-4 mb-4  text-center ">
+              <div >
+                <h3  class="header-color">NEWSLETTER</h3>
+                <div class="container newsletter-main">
+                  <div class="row">
+                      <div class="col-lg-12  col-12">
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control news-input" placeholder="Email" id="demo" name="email">
+                          <div class="input-group-append">
+                            <a href=""><span class="input-group-text ">Subscribe</span></a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <div class="container">
+          <hr class="container text-black mx-auto">
+          <div class="row">
+              <div class="col-lg-8 col-12 text-black">
+                  Copyright ©2024 All rights reserved. | This template is made with love by <span class="bg-theme"> SantokDairyFarm</span>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="scrolltop float-right">
+      <i class="fa fa-arrow-up myBtn" aria-hidden="true" onclick="topFunction()" id="myBtn"></i>
+    </div>
+  </div>
+</footer>
+
+
+<!-- footer ends here -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+<script>
+   mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction(){
+  if(document.body.scrollTop > 300 || document.documentElement.scrollTop >300){
+    mybutton.style.display = "block";
+  }else{
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 </body>
 </html>
