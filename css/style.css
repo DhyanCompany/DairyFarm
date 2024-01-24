@@ -389,6 +389,12 @@ button, a{
     min-width: 120px;
     min-height: 45px;
 }
+
+.icon-image{
+    width: 70px;
+    height: 70px;
+}
+
 /* footer section  */
 
 @media screen and (max-width: 1200px){
