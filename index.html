@@ -1,642 +1,773 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SantokDairyFarm</title>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg bg-color py-5 pt-lg-4" id="home">
         <div class="container">
-          <a class="navbar-brand header-color fw-bold " href="#">SANTOK DAIRY FARM</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="alink nav-link active text-white " aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="alink nav-link" href="#about_us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="alink nav-link" href="#product">Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="alink nav-link" href="#contact_us">Contact Us</a>
-              </li>              
-            </ul>
-          </div>
-        </div>
-      </nav> 
-
-<!-- hero section starts -->
-
-<section class="bg-main bg-color milking-cow pb-5  ">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="mt-5 mt-lg-0 order-lg-0 order-md-1 order-1 text-center text-md-center  text-lg-start  col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
-
-                <h2 class="fw-bolder text-white">Santok Dairy Farm</h2>
-                <p class="mt-3 mb-4 para-width text-light-gray">We produce the world's best dairy products. With a commitment to quality and excellence, we have earned your trust. </p>
-
-                <div class="text-center w-100 text-md-start">
-                    <a href="#contact_us" class="btn btn-primary px-5 py-2 bubbly-button" data-bs-toggle="tooltip" data-bs-title="Contact Now">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-6 order-lg-1 order-0 order-md-0 ">
-                <div class="text-center text-lg-end">
-                    <video src="./img/woman-milking-cow.mp4" loop muted autoplay class="milking-cow--section">Your Browser doesn't support Video.</video>
-                </div>
+            <a class="navbar-brand header-color fw-bold " href="#">SANTOK DAIRY FARM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="alink nav-link active text-white " aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="alink nav-link" href="#about_us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="alink nav-link" href="#product">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="alink nav-link" href="#contact_us">Contact Us</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="custom-shape-divider-bottom-1703654767">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-        </svg>
-    </div>
+    </nav>
 
-</section>
+    <!-- hero section starts -->
 
-<!-- hero section ends -->
+    <section class="bg-main bg-color milking-cow pb-5  ">
+        <div class="container">
+            <div class="row mb-5">
+                <div
+                    class="mt-5 mt-lg-0 order-lg-0 order-md-1 order-1 text-center text-md-center  text-lg-start  col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
 
+                    <h2 class="fw-bolder text-white">Santok Dairy Farm</h2>
+                    <p class="mt-3 mb-4 para-width text-light-gray">We produce the world's best dairy products. With a
+                        commitment to quality and excellence, we have earned your trust. </p>
 
-<!-- about farm section starts here -->
-
-<section class=" services-section" id="about_us">
-    <div class="container text-center common-title fw-bold">
-        <h5 class="common-heading">DISCOVER WHAT GUJARAT DIARY FARM IS ALL ABOUT</h5>
-        <hr class="w-25 mx-auto ">
-    </div>
-
-    <div class="container mt-5">
-        <div class="row g-5 ">
-            <div class="col-xxl-4 col-lg-4 col-12 ">
-                <div class=" card-box rounded-2 p-5 text-center">
-                    <img alt="GIF Image" class="" src="./img/customer-service.mp4" width="200px" height="150px">
-
-                    <h5 class="my-3 fw-normal ">Great Service</h5>
-                    <p class="pe-3 mb-5">
-                        Our love flows through milk, reaching every corner of our state. From the purest milk to the golden richness of Ghee, our commitment to your well-being is poured into each product.
-                    </p>
-                    <div class="  d-flex justify-content-center align-items-center ">
-                        <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                           href="/service.html">
-                            <i class="fa-solid fa-arrow-right"> </i>
+                    <div class="text-center w-100 text-md-start">
+                        <a href="#contact_us" class="btn btn-primary px-5 py-2 bubbly-button" data-bs-toggle="tooltip"
+                            data-bs-title="Contact Now">
+                            Contact Us
                         </a>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-xxl-4 col-lg-4 col-12  ">
-                <div class=" card-box rounded-2 p-5 text-center shadow ">
-                    <img alt="GIF Image" class="img-fluid" src="./img/achievement.mp4" width="200px" height="220px">
-
-                    <h5 class="my-3 fw-normal">Our Achievements</h5>
-                    <p class="pe-3 mb-5">
-                        At Santok Dairy Farm, we've excelled in dairy farming through quality products and sustainable practices. Join us on our journey of excellence and get out trust.
-                    </p>
-                    <div class="  d-flex justify-content-center align-items-center ">
-                        <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                           href="/service.html">
-                            <i class="fa-solid fa-arrow-right"> </i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xxl-4 col-lg-4 col-12 ">
-                <div class=" card-box rounded-2 p-5 text-center">
-                    <img alt="GIF Image"  src="./img/cow.gif" width="200px" height="150px">
-                    <h5 class="my-3 fw-normal ">Responsible farming</h5>
-                    <p class="pe-3 mb-5">
-                        Everyone knows dairy milk comes from cows. But there are some important steps between the farm and to your fridge. Click to get an idea what happens during process.
-                    </p>
-                    <div class="  d-flex justify-content-center align-items-center ">
-                        <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                           href="/service.html">
-                            <i class="fa-solid fa-arrow-right"> </i>
-                        </a>
+                <div class="col-12 col-md-12 col-lg-6 order-lg-1 order-0 order-md-0 ">
+                    <div class="text-center text-lg-end">
+                        <video src="./img/woman-milking-cow.mp4" loop muted autoplay class="milking-cow--section">Your
+                            Browser doesn't support Video.</video>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="custom-shape-divider-bottom-1703654767">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
 
-</section>
+    </section>
 
-<!-- about farm section ends here -->
+    <!-- hero section ends -->
 
 
+    <!-- about farm section starts here -->
 
-<!-- service section starts here  -->
+    <section class=" services-section" id="about_us">
+        <div class="container text-center common-title fw-bold">
+            <h5 class="common-heading">DISCOVER WHAT GUJARAT DIARY FARM IS ALL ABOUT</h5>
+            <hr class="w-25 mx-auto ">
+        </div>
 
-<section class="more-info-section bg-color mb-lg-5 mb-md-5 mb-5">
+        <div class="container mt-5">
+            <div class="row g-5 ">
+                <div class="col-xxl-4 col-lg-4 col-12 ">
+                    <div class=" card-box rounded-2 p-5 text-center">
+                        <img alt="GIF Image" src="./img/customer-service.mp4" width="200px" height="150px">
 
-    <section class="container ">
-        <div class="row">
-            <div class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center  img-section">
-                <figure>
-                    <img alt="mobile chat" class="img-fluid" width="100px" src="./img/phone.gif">
-                </figure>
+                        <h5 class="my-3 fw-normal ">Great Service</h5>
+                        <p class="pe-3 mb-5">
+                            Our love flows through milk, reaching every corner of our state. From the purest milk to the
+                            golden richness of Ghee, our commitment to your well-being is poured into each product.
+                        </p>
+                        <div class="  d-flex justify-content-center align-items-center ">
+                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
+                                href="#delivery">
+                                <i class="fa-solid fa-arrow-right"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-lg-4 col-12  ">
+                    <div class=" card-box rounded-2 p-5 text-center shadow ">
+                        <img alt="GIF Image" src="./img/achievement.mp4" width="200px" height="150px">
+
+                        <h5 class="my-3 fw-normal">Our Achievements</h5>
+                        <p class="pe-3 mb-5">
+                            At Santok Dairy Farm, we've excelled in dairy farming through quality products and
+                            sustainable practices. Join us on our journey of excellence and get out trust.
+                        </p>
+                        <div class="  d-flex justify-content-center align-items-center ">
+                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
+                                href="#gallery">
+                                <i class="fa-solid fa-arrow-right"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-lg-4 col-12 ">
+                    <div class=" card-box rounded-2 p-5 text-center">
+                        <img alt="GIF Image" src="./img/cow.gif" width="200px" height="150px">
+                        <h5 class="my-3 fw-normal ">Responsible farming</h5>
+                        <p class="pe-3 mb-5">
+                            Everyone knows dairy milk comes from cows. But there are some important steps between the
+                            farm and to your fridge. Click to get an idea what happens during process.
+                        </p>
+                        <div class="  d-flex justify-content-center align-items-center ">
+                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
+                                href="#online_services">
+                                <i class="fa-solid fa-arrow-right"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center d-flex flex-column justify-content-center align-items-center ">
+    </section>
 
-                <h1 class="common-heading text-capitalize fw-bolder text-white">
-                    Premium Dairy Products, <br>Available To Your City 
-                </h1>
-                <p class="mt-3 mb-4 para-width text-light-gray">
-                    Welcome to Santok Dairy Farm, where we bring the finest dairy products right to your city. We're proud to offer top-quality items, ensuring you have a delightful experience every time. You can trust us because we focus on sustainable and ethical farming practices. Our cows are treated with care and respect, guaranteeing fresh and high-quality products for your table. Experience the difference of farm-to-table goodness with Santok Farm. Discover the taste of quality and the care we put into every product.
-                </p>
+    <!-- about farm section ends here -->
 
-               <a href="order.html"> <button class="btn btn-primary px-4 py-2 text-center fw-bold" data-bs-target="order.html" data-bs-toggle="tooltip" data-bs-title="Order Now">Place Order</button></a>
+
+
+    <!-- service section starts here  -->
+
+    <section class="more-info-section bg-color mb-lg-5 mb-md-5 mb-5">
+
+        <section class="container ">
+            <div class="row">
+                <div class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center  img-section">
+                    <figure>
+                        <img alt="mobile chat" class="img-fluid" width="100px" src="./img/phone.gif">
+                    </figure>
+                </div>
+
+                <div
+                    class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center d-flex flex-column justify-content-center align-items-center ">
+
+                    <h1 class="common-heading text-capitalize fw-bolder text-white">
+                        Premium Dairy Products, <br>Available To Your City
+                    </h1>
+                    <p class="mt-3 mb-4 para-width text-light-gray">
+                        Welcome to Santok Dairy Farm, where we bring the finest dairy products right to your city. We're
+                        proud to offer top-quality items, ensuring you have a delightful experience every time. You can
+                        trust us because we focus on sustainable and ethical farming practices. Our cows are treated
+                        with care and respect, guaranteeing fresh and high-quality products for your table. Experience
+                        the difference of farm-to-table goodness with Santok Farm. Discover the taste of quality and the
+                        care we put into every product.
+                    </p>
+
+                    <a href="order.html"> <button class="btn btn-primary px-4 py-2 text-center fw-bold"
+                            data-bs-target="order.html" data-bs-toggle="tooltip" data-bs-title="Order Now">Place
+                            Order</button></a>
+                </div>
+
+
             </div>
+        </section>
+    </section>
 
 
+
+    <section class="common-section business-section mb-lg-5 mb-md-5 mb-5">
+        <div class="container text-center fw-bold common-title">
+            <h1 class="common-heading">The Four Pillars of Success</h1>
+            <hr class="w-25 mx-auto ">
+        </div>
+
+        <div class="container " id="online_services">
+            <div class="row g-5">
+                <div class="col-xl-6 col-md-12  ">
+                    <div class="d-flex  px-3 py-5 shadow ">
+                        <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/farm.gif"
+                            width="150px">
+
+                        <div class="row ">
+                            <p class="mb-3 fw-bolder">Optimize Your Tabela Farm</p>
+                            <p> Establish a thriving farm with our comprehensive guidance. From ground-zero to a
+                                successful tabela,
+                                we provide expert insights and essential information to build a robust and efficient
+                                farming structure. </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-6 col-md-12 ">
+                    <div class="d-flex  px-3 py-5 shadow ">
+                        <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3" src="./img/cow2.gif"
+                            width="150px">
+
+                        <div class="row ">
+                            <p class="mb-3 fw-bolder">Expert Cow Selection and Care</p>
+                            <p>Discover the Right Dairy Cows: Choose from our expertly curated selection,
+                                and gain insights on preventive measures.
+                                Let us guide you in selecting and caring for your ideal dairy companions. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-md-12 ">
+                    <div class="d-flex  px-3 py-5 shadow ">
+                        <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3"
+                            src="./img/cowfeed.gif" width="150px">
+
+                        <div class="row ">
+                            <p class="mb-3 fw-bolder">Feeding Your Dairy Success</p>
+                            <p>Elevate Dairy Nutrition: Our comprehensive support covers cow feeding essentials.
+                                Get expert guidance on the right food for optimal health.
+                                Let us empower your dairy farming journey with nourishing insights </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-md-12 ">
+                    <div class="d-flex  px-3 py-5 shadow ">
+                        <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/speaker.gif"
+                            width="150px">
+
+                        <div class="row ">
+                            <p class="mb-3 fw-bolder">Strategic Cow Breeding</p>
+                            <p>In dairy farming, strategic cow breeding boosts milk production and improves genetic
+                                traits,
+                                ensuring healthy, productive herds. Elevate your farm's success with
+                                thoughtful breeding programs and practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- service section ends here  -->
+
+    <!-- product starts here  -->
+
+    <section class="common-section business-section product-section bg-black pt-5 pb-5" id="product">
+        <div class="container text-center fw-bold common-title">
+            <h2 class="common-heading text-white">Generating New Customers Via <br>Online Mode</h2>
+            <hr class="w-25 mx-auto text-white">
+        </div>
+
+        <div class="container  mt-5 ">
+            <div class="row d-flex justify-content-center align-items-center ">
+                <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3">
+                    <div class="card-box-product rounded-2  text-center">
+                        <img alt="GIF Image" class="img-fluid w-100 h-50" src="./img/Milk Pic.jpg">
+
+                        <h5 class="my-3 fw-bold text-white ">Milk</h5>
+                        <hr class="w-25 mx-auto text-white">
+                        <p class="pe-3 mb-5 text-gray ">
+                            Our love flows through every drop of milk, reaching every corner of our state. From the
+                            purest milk to the golden richness of Ghee, our commitment to your well-being is poured into
+                            each product.
+                        </p>
+                        <div class="  d-flex justify-content-center align-items-center ">
+                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
+                                href="order.html#order">
+                                <i class="fa-solid fa-arrow-right"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3 ">
+                    <div class=" card-box-product rounded-2 text-center  ">
+                        <img alt="GIF Image" class="img-fluid w-100 h-50" src="./img/Ghee.jpg">
+
+                        <h5 class="my-3 fw-bold text-white ">Ghee</h5>
+                        <hr class="w-25 mx-auto text-white">
+                        <p class="pe-3 mb-5 text-gray">
+                            Our love flows through every drop of milk, reaching every corner of our state. From the
+                            purest milk to the golden richness of Ghee, our commitment to your well-being is poured into
+                            each product.
+                        </p>
+                        <div class="  d-flex justify-content-center align-items-center ">
+                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
+                                href="order.html#order">
+                                <i class="fa-solid fa-arrow-right"> </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-</section>
+    <!-- product ends here  -->
 
 
+    <!-- Delivery part starts here  -->
 
-<section class="common-section business-section mb-lg-5 mb-md-5 mb-5" id="online_services">
-    <div class="container text-center fw-bold common-title">
-        <h2 class="common-heading">Contact Us To Get More Information <br>About Dairy Farming</h2>
-        <hr class="w-25 mx-auto ">
-    </div>
+    <section class="common-section delivery-section ">
+        <div class="container text-center delivery-title fw-bold pt-5 ">
+            <h2 class="common-heading text-black text-uppercase">Locate the Closest Source of Our <br> Dairy Delicacies
+            </h2>
+            <hr class="w-25 mx-auto ">
+        </div>
 
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-xl-6 col-md-12 ">
-                <div class="d-flex  px-3 py-5 shadow ">
-                    <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/farm.gif"
-                         width="150px">
-
-                    <div class="row ">
-                        <p class="mb-3 fw-bolder">Optimize Your Tabela Farm</p>
-                        <p> Establish a thriving farm with our comprehensive guidance. From ground-zero to a successful tabela,
-                            we provide expert insights and essential information to build a robust and efficient farming structure. </p>
+        <div class="container" id="delivery">
+            <div class="row g-5 pt-5 pb-5">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="d-flex justify-content-center   ">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./img/mehsana.jpg" width="286px" height="190px" class="card-img-top"
+                                alt="Mehsana Image">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 fw-bold ">MEHSANA</h5>
+                                <p class="card-text mt-3 mb-3">Welcome to Mehsana, where tradition meets taste. Explore
+                                    the charm of Mehsana and discover our dairy delights. </p>
+                                <a href="https://www.google.com/maps/place/Santok+Dairy+Farm/@23.7578492,72.3243556,17z/data=!3m1!4b1!4m6!3m5!1s0x395c677740907d61:0x9b6af0daa74d91ee!8m2!3d23.7578492!4d72.3243556!16s%2Fg%2F11f6gjdpbk?entry=ttu"
+                                    target="_blank" class="btn btn-dark px-4">Find Address</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
 
-            <div class="col-xl-6 col-md-12 ">
-                <div class="d-flex  px-3 py-5 shadow ">
-                    <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3" src="./img/cow2.gif"
-                         width="150px">
-
-                    <div class="row ">
-                        <p class="mb-3 fw-bolder">Expert Cow Selection and Care</p>
-                        <p>Discover the Right Dairy Cows: Choose from our expertly curated selection, 
-                            and gain insights on preventive measures. 
-                            Let us guide you in selecting and caring for your ideal dairy companions. </p>   
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="d-flex justify-content-center  ">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./img/ahmedabad.jpg" width="286px" height="190px" class="card-img-top"
+                                alt="Mehsana Image">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 fw-bold ">AHMEDABAD</h5>
+                                <p class="card-text mt-3 mb-3">Welcome to Ahmedabad, where tradition meets taste.
+                                    Explore the charm of Mehsana and discover our dairy delights. </p>
+                                <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu"
+                                    target="_blank" class="btn btn-dark px-4">Find Address</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-xl-6 col-md-12 ">
-                <div class="d-flex  px-3 py-5 shadow ">
-                    <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3" src="./img/cowfeed.gif"
-                         width="150px">
-
-                    <div class="row ">
-                        <p class="mb-3 fw-bolder">Feeding Your Dairy Success</p>
-                        <p>Elevate Dairy Nutrition: Our comprehensive support covers cow feeding essentials. 
-                            Get expert guidance on the right food for optimal health. 
-                            Let us empower your dairy farming journey with nourishing insights </p>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="d-flex justify-content-center  ">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./img/surat.jpg" width="286px" height="190px" class="card-img-top"
+                                alt="Mehsana Image">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 fw-bold ">SURAT</h5>
+                                <p class="card-text mt-3 mb-3">Welcome to Surat, where tradition meets taste. Explore
+                                    the charm of Mehsana and discover our dairy delights. </p>
+                                <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu"
+                                    target="_blank" class="btn btn-dark px-4">Find Address</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-xl-6 col-md-12 ">
-                <div class="d-flex  px-3 py-5 shadow ">
-                    <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/speaker.gif"
-                         width="150px">
-
-                    <div class="row ">
-                        <p class="mb-3 fw-bolder">Referral Programs</p>
-                        <p>Unlock discounts through our Referral Program! Refer friends, boost your savings. 
-                            The more referrals, the greater the rewards. 
-                            Elevate your next purchase with shared joy and exclusive discounts!
-                            </p>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./img/deesa.jpg" width="286px" height="190px" class="card-img-top"
+                                alt="Mehsana Image">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 fw-bold ">DEESA</h5>
+                                <p class="card-text mt-3 mb-3">Welcome to DEESA, where tradition meets taste. Explore
+                                    the charm of Mehsana and discover our dairy delights. </p>
+                                <a href="https://www.google.com/maps/place/Ompark+society/@24.2559461,72.1937126,18.25z/data=!4m6!3m5!1s0x395cbd7e2369e55f:0xc5387cd588062352!8m2!3d24.2562929!4d72.194422!16s%2Fg%2F11k5x28qfd?entry=ttu"
+                                    target="_blank" class="btn btn-dark px-4">Find Address</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
+    <!-- Delivery part ends here  -->
 
 
-<!-- service section ends here  -->
+    <!-- Gallary part starts here -->
 
-<!-- product starts here  -->
-
-<section class="common-section business-section product-section bg-black pt-5 pb-5" id="product">
-    <div class="container text-center fw-bold common-title">
-        <h2 class="common-heading text-white">Generating New Customers Via <br>Online Mode</h2>
-        <hr class="w-25 mx-auto text-white">
-    </div>
-
-    <div class="container  mt-5 ">
-        <div class="row d-flex justify-content-center align-items-center ">
-            <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3">
-                <div class="card-box-product rounded-2  text-center">
-                    <img alt="GIF Image" class="img-fluid w-100 h-50" src="./img/Milk Pic.jpg">
-
-                    <h5 class="my-3 fw-bold text-white ">Milk</h5>
-                    <hr class="w-25 mx-auto text-white">
-                    <p class="pe-3 mb-5 text-gray ">
-                        Our love flows through every drop of milk, reaching every corner of our state. From the purest milk to the golden richness of Ghee, our commitment to your well-being is poured into each product.
-                    </p>
-                    <div class="  d-flex justify-content-center align-items-center ">
-                        <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                           href="order.html#order">
-                            <i class="fa-solid fa-arrow-right"> </i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3 ">
-                <div class=" card-box-product rounded-2 text-center  ">
-                    <img alt="GIF Image" class="img-fluid w-100 h-50" src="./img/Ghee.jpg"  >
-
-                    <h5 class="my-3 fw-bold text-white ">Ghee</h5>
-                    <hr class="w-25 mx-auto text-white">
-                    <p class="pe-3 mb-5 text-gray">
-                        Our love flows through every drop of milk, reaching every corner of our state. From the purest milk to the golden richness of Ghee, our commitment to your well-being is poured into each product.
-                    </p>
-                    <div class="  d-flex justify-content-center align-items-center ">
-                        <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                           href="order.html#order">
-                            <i class="fa-solid fa-arrow-right"> </i>
-                        </a>
+    <section class="gallery-section">
+        <div class="container text-center delivery-title fw-bold pt-5">
+            <h2 class="common-heading text-black text-uppercase">AWARDS AND FARM </h2>
+            <hr class="w-25 mx-auto">
+        </div>
+        <div class="container-fluid" id="gallery">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="container-gallery">
+                        <div class="slide">
+                            <div class="item" style="background-image: url(./img/certificate3.jpg);">
+                                <div class="content">
+                                    <div class="name">Switzerland</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(./img/certificate2.jpg);">
+                                <div class="content">
+                                    <div class="name">Finland</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                    <button>See More</button>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(./img/certificate1.jpg);">
+                                <div class="content">
+                                    <div class="name">Iceland</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                    <button>See More</button>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(./img/Tabelo1.jpg);">
+                                <div class="content">
+                                    <div class="name">Australia</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                    <button>See More</button>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(./img/tabelo2.jpg);">
+                                <div class="content">
+                                    <div class="name">Netherland</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                    <button>See More</button>
+                                </div>
+                            </div>
+                            <div class="item" style="background-image: url(./img/tabelo3.jpg);">
+                                <div class="content">
+                                    <div class="name">Ireland</div>
+                                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                    </div>
+                                    <button>See More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- product ends here  -->
+    </section>
+    <!-- Gallary part ends here -->
 
 
-<!-- Delivery part starts here  -->
+    <!-- contact us part starts here  -->
 
-<section class="common-section delivery-section " id="online_services">
-    <div class="container text-center delivery-title fw-bold pt-5 ">
-        <h2 class="common-heading text-black text-uppercase">Locate the Closest Source of Our <br> Dairy Delicacies </h2>
-        <hr class="w-25 mx-auto ">
-    </div>
+    <section class="common-section contact-section text-white bg-color  pt-5 pb-5">
 
-    <div class="container">
-        <div class="row g-5 pt-5 pb-5">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="d-flex justify-content-center   ">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./img/mehsana.jpg" width="286px" height="190px" class="card-img-top" alt="Mehsana Image">
-                        <div class="card-body">
-                          <h5 class="card-title mt-2 fw-bold ">MEHSANA</h5>
-                          <p class="card-text mt-3 mb-3">Welcome to Mehsana, where tradition meets taste. Explore the charm of Mehsana and discover our dairy delights. </p>
-                          <a href="https://www.google.com/maps/place/Santok+Dairy+Farm/@23.7578492,72.3243556,17z/data=!3m1!4b1!4m6!3m5!1s0x395c677740907d61:0x9b6af0daa74d91ee!8m2!3d23.7578492!4d72.3243556!16s%2Fg%2F11f6gjdpbk?entry=ttu" target="_blank" class="btn btn-dark px-4">Find Address</a>
-                        </div>
-                      </div>
-                </div>     
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="d-flex justify-content-center  ">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./img/ahmedabad.jpg" width="286px" height="190px" class="card-img-top" alt="Mehsana Image">
-                        <div class="card-body">
-                          <h5 class="card-title mt-2 fw-bold ">AHMEDABAD</h5>
-                          <p class="card-text mt-3 mb-3">Welcome to Ahmedabad, where tradition meets taste. Explore the charm of Mehsana and discover our dairy delights. </p>
-                          <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu" target="_blank" class="btn btn-dark px-4">Find Address</a>
-                        </div>
-                      </div>
-                </div>     
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="d-flex justify-content-center  ">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./img/surat.jpg" width="286px" height="190px" class="card-img-top" alt="Mehsana Image">
-                        <div class="card-body">
-                          <h5 class="card-title mt-2 fw-bold ">SURAT</h5>
-                          <p class="card-text mt-3 mb-3">Welcome to Surat, where tradition meets taste. Explore the charm of Mehsana and discover our dairy delights. </p>
-                          <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu" target="_blank" class="btn btn-dark px-4">Find Address</a>
-                        </div>
-                      </div>
-                </div>     
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./img/deesa.jpg" width="286px" height="190px" class="card-img-top" alt="Mehsana Image">
-                        <div class="card-body">
-                          <h5 class="card-title mt-2 fw-bold ">DEESA</h5>
-                          <p class="card-text mt-3 mb-3">Welcome to DEESA, where tradition meets taste. Explore the charm of Mehsana and discover our dairy delights. </p>
-                          <a href="https://www.google.com/maps/place/Ompark+society/@24.2559461,72.1937126,18.25z/data=!4m6!3m5!1s0x395cbd7e2369e55f:0xc5387cd588062352!8m2!3d24.2562929!4d72.194422!16s%2Fg%2F11k5x28qfd?entry=ttu" target="_blank" class="btn btn-dark px-4">Find Address</a>
-                        </div>
-                      </div>
-                </div>     
-            </div>
+        <div class="custom-shape-divider-top-1704309762">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
         </div>
-    </div>
 
-</section>
-<!-- Delivery part ends here  -->
+        <div class="container text-center fw-bold common-title " id="contact_us">
+            <h2 class="common-heading  text-white">Contact Us</h2>
+            <hr class="w-25 mx-auto text-white ">
+        </div>
 
+        <div class="container">
+            <div class="form-section mx-auto">
 
-<!-- contact us part starts here  -->
-
-<section class="common-section contact-section text-white bg-color  pt-5 pb-5" >
-
-    <div class="custom-shape-divider-top-1704309762">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-        </svg>
-    </div>
-
-    <div class="container text-center fw-bold common-title " id="contact_us">
-        <h2 class="common-heading  text-white">Contact Us</h2>
-        <hr class="w-25 mx-auto text-white ">
-    </div>
-
-    <div class="container">
-        <div class="form-section mx-auto">
-           
-                <form id="myForm" action="https://formspree.io/f/mayrqqve"
-                method="POST" >
-                <!-- <form id="myForm" action="submit.php" method="post" onsubmit="submitFormAndSendWhatsApp(); return false;"> -->
+                <form id="myForm" action="https://formspree.io/f/mayrqqve" method="POST">
+                    <!-- <form id="myForm" action="submit.php" method="post" onsubmit="submitFormAndSendWhatsApp(); return false;"> -->
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-lg-6 col-12 ">
                                 <label for="exampleFormUserFirstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="exampleFormUserFirstName" id="exampleFormUserFirstName" placeholder="First Name"  required>
+                                <input type="text" class="form-control" name="exampleFormUserFirstName"
+                                    id="exampleFormUserFirstName" placeholder="First Name" required>
 
                             </div>
                             <div class="col-lg-6 col-12">
                                 <label for="exampleFormUserLastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="exampleFormUserLastName" id="exampleFormUserLastName" placeholder="Last Name" required>
+                                <input type="text" class="form-control" name="exampleFormUserLastName"
+                                    id="exampleFormUserLastName" placeholder="Last Name" required>
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="mb-3 " >
+                    <div class="mb-3 ">
                         <label for="phone" class="form-label">Phone No:</label>
                         <div class="input-group">
-                            <span class="input-group-text justify-content-center" style="min-width: 60px; min-height: 30px;">+91</span>
-                            <input type="tel" class="form-control" id="phone" name="Phone"  placeholder="01234 56789" pattern="[0-9]{10}" required>
+                            <span class="input-group-text justify-content-center"
+                                style="min-width: 60px; min-height: 30px;">+91</span>
+                            <input type="tel" class="form-control" id="phone" name="Phone" placeholder="01234 56789"
+                                pattern="[0-9]{10}" required>
                         </div>
                     </div>
-                    
+
 
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address (Optional)</label>
-                      <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ="Enter your email here" >
+                        <label for="exampleInputEmail1" class="form-label">Email address (Optional)</label>
+                        <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter your email here">
                     </div>
-                   
                     <div class="mb-5">
-                        <label for="exampleFormControlTextarea1" class="form-label " >Enter Your Message</label>
-                        <textarea class="form-control" name="exampleFormControlTextarea1" id="exampleFormControlTextarea1" rows="3" placeholder ="Tell us ! How can we Help !" required></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label ">Enter Your Message</label>
+                        <textarea class="form-control" name="exampleFormControlTextarea1"
+                            id="exampleFormControlTextarea1" rows="3" placeholder="Tell us ! How can we Help !"
+                            required></textarea>
+                    </div>
+                    <button type="submit" style="width: 164.27px;" class="btn btn-primary  text-white  px-5 py-2 "
+                        data-bs-toggle="tooltip" data-bs-title="Send E-mail">Submit</button>
+                    <button type="button" onclick="sendWhatsApp();"
+                        class="  mx-lg-3 mx-md-3 btn whatsapp-button text-white  px-4 py-2  mt-md-0 mt-lg-0"
+                        data-bs-toggle="tooltip" data-bs-title="Whatsapp Us">Whatsapp Us</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <!-- contact us part ends here  -->
+
+    <!-- ABOUT OWNER starts here  -->
+
+   
+ 
+
+    <!-- ABOUT OWNER ends here  -->
+
+
+
+    <!-- footer section starts here  -->
+
+    <footer class="main-footer-section bg-color">
+        <div class="contact-details">
+            <div class="container px-5 mb-5">
+                <div class="row g-0">
+                    <div class="col-lg-3  ">
+                        <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                            <a href="https://www.instagram.com/santok_dairy_farm/" target="_blank">
+                                <div
+                                    class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                                    <img src="./img/instagram.gif" alt="GIF Image" class="img-fluid icon-image ">
+                                </div>
+                            </a>
+                            <p class="text-white fw-bold">Follow Us</p>
+                        </div>
                     </div>
 
-                    <button type="submit"   style="width: 164.27px;" class="btn btn-primary  text-white  px-5 py-2 "  data-bs-toggle="tooltip" data-bs-title="Send E-mail">Submit</button>
-                    <button type="button" onclick="sendWhatsApp();" class="  mx-lg-3 mx-md-3 btn whatsapp-button text-white  px-4 py-2  mt-md-0 mt-lg-0"   data-bs-toggle="tooltip" data-bs-title="Whatsapp Us">Whatsapp Us</button>
-
-                  </form>
-            
-        </div>
-    </div>
-
-</section>
-<!-- contact us part ends here  -->
-
-<!-- footer section starts here  -->
-
-<footer class="main-footer-section bg-color">
-    <div class="contact-details">
-        <div class="container px-5 mb-5">
-            <div class="row g-0">
-                <div class="col-lg-3  ">
-                    <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
-                        <a href="https://www.instagram.com/santok_dairy_farm/" target="_blank">
+                    <div class="col-lg-3 ">
+                        <div
+                            class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
                             <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                                <img src="./img/instagram.gif" alt="GIF Image" class="img-fluid icon-image ">
+                                <a href="https://wa.me/14372233476" target="_blank">
+                                    <img src="./img/facebook1.gif" alt="GIF Image" class="img-fluid icon-image ">
+                                </a>
                             </div>
-                        </a>
-                        <p class="text-white fw-bold">Follow Us</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 ">
-                    <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
-                        <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                            <a href="https://wa.me/14372233476" target="_blank">
-                                <img src="./img/facebook1.gif" alt="GIF Image" class="img-fluid icon-image ">
-                            </a>
+                            <p class="text-white fw-bold">Follow Facebook</p>
                         </div>
-                        <p class="text-white fw-bold">Follow Facebook</p>
                     </div>
-                </div>
 
-                <div class="col-lg-3 ">
-                    <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
-                        <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                            <a href="https://wa.me/14372233476" target="_blank">
-                                <img src="./img/whatsapp.gif" alt="GIF Image" class="img-fluid icon-image">
-                            </a>
+                    <div class="col-lg-3 ">
+                        <div
+                            class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
+                            <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                                <a href="https://wa.me/14372233476" target="_blank">
+                                    <img src="./img/whatsapp.gif" alt="GIF Image" class="img-fluid icon-image">
+                                </a>
+                            </div>
+                            <p class="text-white fw-bold">(+91) 98251 98128</p>
                         </div>
-                        <p class="text-white fw-bold">(+91) 98251 98128</p>
                     </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
-                        <a href="mailto:santokdairyfa@gmail.com" class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                            <img src="./img/mail.gif" alt="GIF Image" class="img-fluid icon-image">
-                        </a>
-                        <p class="text-white fw-bold">santokdairyfarm@gmail.com</p>
+                    <div class="col-lg-3">
+                        <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
+                            <a href="mailto:santokdairyfa@gmail.com"
+                                class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
+                                <img src="./img/mail.gif" alt="GIF Image" class="img-fluid icon-image">
+                            </a>
+                            <p class="text-white fw-bold">santokdairyfarm@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="row mb-5 ">
-              <div class="col-lg-4 col-md-6 col-12 footer-div text-center  mt-4 mb-4  ">
-                <div>
-                  <h3>ABOUT OUR FARM</h3>
-                  <P>The world required basic needs that is dairy product, now Santok dairy farm has brought fresh milk and ghee for Gujarat state to taste fresh ard organic milk and ghee.</P>
+            <div class="container">
+                <div class="row mb-5 ">
+                    <div class="col-lg-4 col-md-6 col-12 footer-div text-center  mt-4 mb-4  ">
+                        <div>
+                            <h3>ABOUT OUR FARM</h3>
+                            <P>The world required basic needs that is dairy product, now Santok dairy farm has brought
+                                fresh milk and ghee for Gujarat state to taste fresh ard organic milk and ghee.</P>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 footer-div text-center mt-4 mb-4 ">
+                        <div>
+                            <h3>NAVIGATION LINKS</h3>
+                            <li><a class="alink nav-link " href="#home">Home</a></li>
+                            <li><a class="alink nav-link " href="#product">Product</a></li>
+                            <li><a class="alink nav-link " href="#about_us">About</a></li>
+                            <li><a class="alink nav-link " href="#contact_us">Contact Us</a></li>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-12 col-12 footer-div d-flex justify-content-center mt-4 mb-4  text-center ">
+                        <div>
+                            <h3 class="header-color">NEWSLETTER</h3>
+                            <div class="container newsletter-main">
+                                <div class="row">
+                                    <div class="col-lg-12  col-12">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control news-input" placeholder="Email"
+                                                id="demo" name="email">
+                                            <div class="input-group-append">
+                                                <a href=""><span class="input-group-text ">Subscribe</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12  col-12">
+                                        <div class=" mb-3">
+                                            <p class="text-center text-white mb-2">
+                                                Contact US <br>
+                                                <span class="fw-bold"> <a href="tel:+919825198128"
+                                                        style="color: #29a9fd; text-decoration: none;">+91 98251
+                                                        98128</a></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 footer-div text-center mt-4 mb-4 ">
-                <div>
-                  <h3>NAVIGATION LINKS</h3>
-                  <li><a class="alink nav-link " href="#home">Home</a></li>
-                  <li><a class="alink nav-link " href="#product">Product</a></li>
-                  <li><a class="alink nav-link " href="#about_us">About</a></li>
-                  <li><a class="alink nav-link " href="#contact_us">Contact Us</a></li>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-12 col-12 footer-div d-flex justify-content-center mt-4 mb-4  text-center ">
-                <div >
-                  <h3  class="header-color">NEWSLETTER</h3>
-                  <div class="container newsletter-main">
+
+                <div class="container">
+                    <hr class="container mx-auto">
                     <div class="row">
-                        <div class="col-lg-12  col-12">
-                          <div class="input-group mb-3">
-                            <input type="text" class="form-control news-input" placeholder="Email" id="demo" name="email">
-                            <div class="input-group-append">
-                              <a href=""><span class="input-group-text ">Subscribe</span></a>
-                            </div>
-                          </div>
+                        <div class="col-lg-8 col-12 ">
+                            Copyright ©2024 All rights reserved. | This template is made with love by <span
+                                class="bg-theme"> SantokDairyFarm</span>
                         </div>
-                        <div class="col-lg-12  col-12">
-                            <div class=" mb-3">
-                              <p class="text-center text-white mb-2">
-                                Contact US <br>
-                                <span class="fw-bold"> <a href="tel:+919825198128" style="color: #29a9fd; text-decoration: none;">+91 98251 98128</a></span>
-                            </p>                        </div>
-                          </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
 
-        <div class="container">
-            <hr class="container mx-auto">
-            <div class="row">
-                <div class="col-lg-8 col-12 ">
-                    Copyright ©2024 All rights reserved. | This template is made with love by <span class="bg-theme"> SantokDairyFarm</span>
-                </div>
+            <div class="scrolltop float-right">
+                <i class="fa fa-arrow-up myBtn" aria-hidden="true" onclick="topFunction()" id="myBtn"></i>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <div class="scrolltop float-right">
-        <i class="fa fa-arrow-up myBtn" aria-hidden="true" onclick="topFunction()" id="myBtn"></i>
-      </div>
-    </div>
-</footer>
-
-<!-- footer section ends here  -->
+    <!-- footer section ends here  -->
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script>const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 
-
-
-<script src="https://smtpjs.com/v3/smtp.js">
 </script>
-<script>
 
-    // function sendEmail(){
-    //             Email.send({
-    //                 secureToken: " 8d12cebe-2afb-4897-88ae-45251b1fb248",
-    //         Host : "smtp.gmail.com",
-    //         Username : "santokfarm@gmail.com",
-    //         Password : "",
-    //         To : 'santokdairyfarm@gmail.com',
-    //         From : "santokdairyfarm@gmail.com",
-    //         Subject : "Customer Contact",
-    //         Body : "Customer Contact  @SantokDairyFarm"
-    //                 +"<br><br>Email :  "+ document.getElementById("exampleFormUserFirstName").value
-    //                 +"<br>Email :  "+  document.getElementById("exampleFormUserLastName").value
-    //                 +"<br>Email :  "+ document.getElementById("phone").value
-    //                 +"<br>Email :  "+ document.getElementById("exampleInputEmail1").value
-    //                 +"<br>Email :  "+ document.getElementById("exampleFormControlTextarea1").value
-    //     }).then(
-    //     message => alert("Thank You For Contact SantokDairyFarm ❤️")
-        
-    //     );
-    // }
-    
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
 
 
-    function sendWhatsApp() {
-        var phonenumber = "+14372233476";
 
-        var firstName = document.getElementById("exampleFormUserFirstName").value;
-        var lastName = document.getElementById("exampleFormUserLastName").value;
-        var phone = document.getElementById("phone").value;
-        var email = document.getElementById("exampleInputEmail1").value;
-        var message = document.getElementById("exampleFormControlTextarea1").value;
+        function sendWhatsApp() {
+            var phonenumber = "+14372233476";
 
-        if (!firstName || !lastName || !phone) {
-        alert("(First Name, Last Name, Phone No) is required ");
-        return;
-    }
+            var firstName = document.getElementById("exampleFormUserFirstName").value;
+            var lastName = document.getElementById("exampleFormUserLastName").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("exampleInputEmail1").value;
+            var message = document.getElementById("exampleFormControlTextarea1").value;
+
+            if (!firstName || !lastName || !phone) {
+                alert("(First Name, Last Name, Phone No) is required ");
+                return;
+            }
 
 
-        var url = "https://wa.me/"  + phonenumber + "?text=" 
-                                    + "First Name :  " + firstName+ "%0a"
-                                    + "Last Name :  " + lastName+ "%0a"
-                                    + "Phone No :  " + phone + "%0a"
-                                    + "E-mail :  " + email + "%0a"
-                                    + "Message :  " + message + "%0a%0a"
-                                    + "This is a Contact from Website.";
+            var url = "https://wa.me/" + phonenumber + "?text="
+                + "First Name :  " + firstName + "%0a"
+                + "Last Name :  " + lastName + "%0a"
+                + "Phone No :  " + phone + "%0a"
+                + "E-mail :  " + email + "%0a"
+                + "Message :  " + message + "%0a%0a"
+                + "This is a Contact from Website.";
 
-        window.open(url, '_blank').focus();
-    }
-        // Compose WhatsApp message
-        // var whatsappMessage = "First Name: " + firstName + "%0a" +
-        //              "Last Name: " + lastName + "%0a" +
-        //              "Phone Number: " + phone + "%0a" +
-        //              "Email: " + email + "%0a%0a" +
-        //              "Message: " + message;
-
-        // // Construct WhatsApp link
-        // var whatsappLink = "https://wa.me/14372233476?text=" + encodeURIComponent(whatsappMessage);
-
-        // // Open WhatsApp link in a new tab
-        // window.open(whatsappLink, "_blank");
-
-        // // Now submit the form to your server (submit.php)
-        // document.getElementById("myForm").submit();
-    // }
+            window.open(url, '_blank').focus();
+        }
 
 
 
 
 
-    mybutton = document.getElementById("myBtn");
+        mybutton = document.getElementById("myBtn");
 
-    window.onscroll = function() {scrollFunction()};
+        window.onscroll = function () { scrollFunction() };
 
-    function scrollFunction(){
-      if(document.body.scrollTop > 300 || document.documentElement.scrollTop >300){
-        mybutton.style.display = "block";
-      }else{
-        mybutton.style.display = "none";
-      }
-    }
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
 
-    function topFunction(){
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-</script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+
+
+        // gallery starts here
+
+
+        let next = document.querySelector('.next')
+        let prev = document.querySelector('.prev')
+
+        next.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').appendChild(items[0])
+        })
+
+        prev.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+        })
+    </script>
 </body>
+
 </html>
