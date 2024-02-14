@@ -70,6 +70,9 @@ button, a{
     word-spacing: .1rem;
 }
 
+.common-section{
+    overflow: hidden;
+}
 
 
 .nav-link{
@@ -151,6 +154,7 @@ button, a{
 
 .milking-cow--section{
     max-width: 100%;
+    height:20rem;
     width: 60%;
     border-radius: 2rem;
 }
@@ -220,6 +224,7 @@ button, a{
 .card-box-product{
     width: 400px;
     height: 600px;
+    border-radius: 10px;
 }
 
 .card-box-product:hover{
@@ -399,7 +404,8 @@ button, a{
 
 @media screen and (max-width: 1200px){
     .milking-cow--section{
-        width: 20rem;
+        height: 15rem;
+        width: 15rem;
         border-radius: 1rem;
     }
 }
@@ -520,10 +526,10 @@ button, a{
     height: 250px;
     position: absolute;
     top: 75%;
-    transform: translate(50%, -50%);
+    transform: translate(140%, -50%);
     border-radius: 20px;
     box-shadow: 0 30px 50px #505050;
-    background-position: 50% 50%;
+    background-position: 50% 0%;
     background-size: cover;
     display: inline-block;
     transition: 0.5s;
@@ -534,8 +540,8 @@ button, a{
         width: 100px;
         height: 150px;
         position: absolute;
-        top: 80%;
-        transform: translate(0, -50%);
+        top: 85%;
+        transform: translate(160%, -50%);
         border-radius: 20px;
         box-shadow: 0 30px 50px #505050;
         background-position: 50% 50%;
@@ -566,24 +572,24 @@ button, a{
 
 }
 .slide .item:nth-child(4){
-    left: calc(50% + 110px);
+    left: calc(50% + 50px);
     @media (max-width: 768px) {
-        left: calc(50% + 60px);
+        left: calc(50% + 40px);
     }
 }
 .slide .item:nth-child(n + 5){
-    left: calc(50% + 220px);
+    left: calc(50% + 100px);
     @media  (max-width: 768px){
-        left: calc(50% + 115px);
+        left: calc(50% + 80px);
     }   
 }
 
 /* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 6){
-    left: calc(50% + 300px);
+    left: calc(50% + 150px);
     opacity: 0;
     @media(max-width: 768px){
-        left: calc(50% + 180px);
+        left: calc(50% + 120px);
          opacity: 0;
     }
 }
@@ -687,7 +693,7 @@ button, a{
     position: relative;
     width: 100%;
     max-width: 100%; /* Set a maximum width if needed */
-    height: 500px;
+    height: 85vh;
     border-radius: 30px;
     background: #f5f5f5;
     box-shadow: 0 10px 10px #dbdbdb;
