@@ -240,6 +240,10 @@ button, a{
     height: 200px;
 }
 
+.phone-img{
+    margin-left: 50px;
+}
+
 /* Delivery section */
 
 .text-gray{
@@ -855,3 +859,4 @@ button, a{
 
 
 /* owner ends here  */
+
