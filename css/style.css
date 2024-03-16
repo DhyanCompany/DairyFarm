@@ -240,9 +240,7 @@ button, a{
     height: 200px;
 }
 
-.phone-img{
-    margin-left: 50px;
-}
+
 
 /* Delivery section */
 
@@ -506,357 +504,36 @@ button, a{
 
 /* footer ends here */
 
-.gallery-section {
-    position: relative;
-    margin-bottom: 5rem;
+
+
+/* Gallary starts here  */
+
+
+
+.imag-slider{overflow: hidden !important;margin:50px 0;}
+#carousel {display: flex;justify-content: center;position: relative;height:calc(50vw / 4 * 3);width:100%;margin:0px 0px 30px;}
+#carousel a {position: absolute;aspect-ratio: 4/3;cursor: pointer;transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+opacity: 1;}
+#carousel a img {width:50vw;height: 100%;transition: width 1s;}
+#carousel a.hideLeft {left: 0%;opacity: 0;transform: translateY(50%) translateX(0%);}
+#carousel a.hideLeft img,#carousel a.hideRight img {width: calc(50vw / 2);}
+#carousel a.hideRight {left: 100%;opacity: 0;transform: translateY(50%) translateX(-100%);}
+#carousel a.prev {z-index: 5;left: 30%;transform: translateY(17.5%) translateX(-50%);}
+#carousel a.prev img,#carousel a.next img {width: calc(50vw / 4 * 3);}
+#carousel a.prevSecond {z-index: 4;left: 15%;transform: translateY(50%) translateX(-50%);opacity: 0.7;}
+#carousel a.prevSecond img,#carousel a.nextSecond img {width: calc(50vw / 2);}
+#carousel a.selected {z-index: 6;left: 50%;transform: translateY(0px) translateX(-50%)}
+#carousel a.next {z-index: 5;left: 70%;transform: translateY(17.5%) translateX(-50%)}
+#carousel a.nextSecond {z-index: 4;left: 85%;transform: translateY(50%) translateX(-50%);opacity: 0.7;}
+.buttons {display: flex;justify-content: center;width:100%;height:auto;border: none;margin: auto;margin-top: .5em;
 }
-
-
-/* Gallary starts here */
-.container-gallery {
-    position: relative;
-    width: 100%;
-    max-width: 95%; /* Set a maximum width if needed */
-    height: 90vh;
-    background: #f5f5f5;
-    box-shadow: 0 10px 10px #dbdbdb;
-    margin: 3rem auto; /* Center the container horizontally and add top/bottom margins */
-    padding: 0 2rem; /* Add padding on both sides */
-    overflow: hidden;
+.buttons button {background: #000;border: inherit;}
+.buttons .arrow svg polyline{stroke:#fff;stroke-width:10;}
+.arrow {cursor: pointer;width:50px;height:50px;padding:10px;margin:0px 1px;}
+.left:hover polyline, .left:focus polyline,.right:hover polyline, .right:focus polyline {stroke-width: 3;
 }
-
-.container-gallery .slide .item{
-    width: 150px;
-    height: 250px;
-    position: absolute;
-    top: 75%;
-    transform: translate(140%, -50%);
-    border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
-    background-position: 50% 0%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
-}
-
-@media (max-width: 768px) {
-    .container-gallery .slide .item {
-        width: 100px;
-        height: 150px;
-        position: absolute;
-        top: 85%;
-        transform: translate(160%, -50%);
-        border-radius: 20px;
-        box-shadow: 0 30px 50px #505050;
-        background-position: 50% 50%;
-        background-size: cover;
-        display: inline-block;
-        transition: 0.5s; /* Adjust item width for smaller screens */
-    }
-}
+.left:active polyline, .right:active polyline {stroke-width: 6;transition: all 100ms ease-in-out;}
+polyline {transition: all 250ms ease-in-out;}
 
 
-
-
-.slide .item:nth-child(1),
-.slide .item:nth-child(2){
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-.slide .item:nth-child(3){
-
-    left: 50%;
-   
-
-}
-.slide .item:nth-child(4){
-    left: calc(50% + 50px);
-    @media (max-width: 768px) {
-        left: calc(50% + 40px);
-    }
-}
-.slide .item:nth-child(n + 5){
-    left: calc(50% + 100px);
-    @media  (max-width: 768px){
-        left: calc(50% + 80px);
-    }   
-}
-
-/* here n = 0, 1, 2, 3,... */
-.slide .item:nth-child(n + 6){
-    left: calc(50% + 150px);
-    opacity: 0;
-    @media(max-width: 768px){
-        left: calc(50% + 120px);
-         opacity: 0;
-    }
-}
-
-
-
-.item .content{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    width: 300px;
-    text-align: left;
-    color: #eee;
-    transform: translate(0, -50%);
-    font-family: system-ui;
-    display: none;
-}
-
-
-.slide .item:nth-child(2) .content{
-    display: block;
-}
-
-
-.content .name{
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
-
-.content .des{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
-
-.content button{
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-
-@keyframes animate {
-    from{
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translate(0);
-        filter: blur(0);
-    }
-}
-
-
-
-.button{
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-}
-
-.button button{
-    width: 40px;
-    height: 35px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border: 1px solid #000;
-    transition: 0.3s;
-}
-
-.button button:hover{
-    background: #ababab;
-    color: #fff;
-}
-
-/* Gallary ends here */
-
-
-/* Owner starts here  */
-
-.gallery-section2 {
-    position: relative;
-    margin-bottom: 0rem;
-}
-
-
-/* Gallary starts here */
-.container-gallery2 {
-    position: relative;
-    width: 100%;
-    max-width: 100%; /* Set a maximum width if needed */
-    height: 85vh;
-    border-radius: 30px;
-    background: #f5f5f5;
-    box-shadow: 0 10px 10px #dbdbdb;
-    margin: 3rem auto; /* Center the container horizontally and add top/bottom margins */
-    padding: 0 2rem; /* Add padding on both sides */
-    overflow: hidden;
-}
-
-.container-gallery2 .slide2 .item{
-    width: 150px;
-    height: 250px;
-    position: absolute;
-    top: 80%;
-    transform: translate(70%, -50%);
-    border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
-    background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
-}
-
-@media (max-width: 768px) {
-    .container-gallery2 .slide2 .item {
-        width: 100px;
-        height: 150px;
-        position: absolute;
-        top: 80%;
-        transform: translate(80%, -50%);
-        border-radius: 20px;
-        box-shadow: 0 30px 50px #505050;
-        background-position: 50% 50%;
-        background-size: cover;
-        display: inline-block;
-        transition: 0.5s; /* Adjust item width for smaller screens */
-    }
-}
-
-
-
-
-.slide2 .item:nth-child(1),
-.slide2 .item:nth-child(2){
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-.slide2 .item:nth-child(3){
-    left: 50%;
-}
-.slide2 .item:nth-child(4){
-    left: calc(50% + 90px);
-    @media (max-width: 768px) {
-        left: calc(50% + 40px);
-    }
-}
-.slide2 .item:nth-child(n + 5){
-    left: calc(50% + 190px);
-    @media  (max-width: 768px){
-        left: calc(50% + 90px);
-    }   
-}
-
-/* here n = 0, 1, 2, 3,... */
-.slide2 .item:nth-child(n + 6){
-    left: calc(50% + 400px);
-    opacity: 0;
-    @media(max-width: 768px){
-        left: calc(50% + 180px);
-         
-    }
-}
-
-
-
-.item .content2{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    width: 300px;
-    text-align: left;
-    color: #eee;
-    transform: translate(0, -50%);
-    font-family: system-ui;
-    display: none;
-}
-
-
-.slide .item:nth-child(2) .content2{
-    display: block;
-}
-
-
-.content2 .name{
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
-
-.content2 .des{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
-
-.content2 button{
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-
-@keyframes animate {
-    from{
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translate(0);
-        filter: blur(0);
-    }
-}
-
-.button{
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-}
-
-.button button{
-    width: 40px;
-    height: 35px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border: 1px solid #000;
-    transition: 0.3s;
-}
-
-.button button:hover{
-    background:var(--secondary-color);
-    color: #fff;
-}
-
-
-/* owner ends here  */
-
+/* Gallary ends here  */
