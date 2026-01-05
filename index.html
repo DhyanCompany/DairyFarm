@@ -1,842 +1,925 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santok Dairy Farm | Pure Organic Ghee & Milk</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SantokDairyFarm</title>
+    
+    <style>
+        /* Additional styles for better spacing */
+        .highlight {
+            background: linear-gradient(120deg, rgba(74, 144, 226, 0.1) 0%, transparent 100%);
+            padding: 3px 10px;
+            border-radius: 5px;
+        }
+        
+        .step-content h3 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+        
+        .step-content p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-milk">
+                <div class="loader-milk-glass">
+                    <div class="loader-milk-liquid"></div>
+                </div>
+            </div>
+            <h3 class="text-primary mt-3">Santok Dairy Farm</h3>
+            <p class="text-muted">Loading fresh content...</p>
+        </div>
+    </div>
 
-    <nav class="navbar navbar-expand-lg bg-color py-5 pt-lg-4" id="home">
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h4><i class="fas fa-shopping-cart me-2"></i> Your Cart</h4>
+            <button class="btn btn-sm btn-outline-secondary close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-total">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Delivery:</span>
+                <span id="cart-delivery">₹50</span>
+            </div>
+            <div class="cart-total-row total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹50</span>
+            </div>
+            <button class="cart-checkout-btn" id="checkout-btn">
+                <i class="fas fa-shopping-bag me-2"></i> Checkout Now
+            </button>
+            <a href="order.html" class="btn btn-outline-primary w-100 mt-3">
+                <i class="fas fa-arrow-right me-2"></i> View Order Page
+            </a>
+        </div>
+    </div>
+    
+    <div class="cart-overlay"></div>
+
+    <!-- Cart Floating Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-floating-count">0</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container">
-            <a class="navbar-brand header-color fw-bold " href="#">SANTOK DAIRY FARM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cow"></i> SANTOK DAIRY FARM
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="alink nav-link active text-white " aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="alink nav-link" href="#about_us">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="alink nav-link" href="#product">Order</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="alink nav-link" href="#contact_us">Contact Us</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item ms-3">
+                        <button class="cart-btn-nav" id="nav-cart-toggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Cart</span>
+                            <span class="cart-count-nav" id="nav-cart-count">0</span>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- hero section starts -->
-
-    <section class="common-section bg-main bg-color milking-cow pb-5  ">
+    <!-- Hero Section with Milk Glass -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg-pattern"></div>
         <div class="container">
-            <div class="row mb-5">
-                <div
-                    class="mt-5 mt-lg-0 order-lg-0 order-md-1 order-1 text-center text-md-center  text-lg-start  col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
-
-                    <h2 class="fw-bolder text-white">Santok Dairy Farm</h2>
-                    <p class="mt-3 mb-4 para-width text-light-gray">Santok Farm Has Come To Bring You Fresh And 
-                        Organic Ghee And Milk To Your Family. Our Vision Is To Become Gujarat's Biggest Dairy Farm. </p>
-
-                    <div class="text-center w-100 text-md-start">
-                        <a href="#contact_us" class="btn btn-primary px-5 py-2 bubbly-button" data-bs-toggle="tooltip"
-                            data-bs-title="Contact Now">
-                            Contact Us
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title">
+                        From Fresh Milk <br>To Golden <span class="text-gradient">Ghee</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Experience the magical journey of transformation where fresh milk 
+                        becomes aromatic ghee through traditional methods passed down for generations.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#process" class="btn btn-primary btn-lg">
+                            <i class="fas fa-play-circle me-2"></i> Watch Journey
+                        </a>
+                        <a href="#products" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-shopping-cart me-2"></i> Shop Products
                         </a>
                     </div>
+                    
+                    <!-- Stats -->
+                    <div class="row mt-5 pt-4">
+                        <div class="col-md-3 col-6">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">15+</h3>
+                                <p class="text-muted">Years Experience</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">500+</h3>
+                                <p class="text-muted">Happy Cows</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">4</h3>
+                                <p class="text-muted">Cities Served</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="text-center">
+                                <h3 class="fw-bold text-primary">100%</h3>
+                                <p class="text-muted">Pure Organic</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-12 col-lg-6 order-lg-1 order-0 order-md-0 ">
-                    <div class="text-center text-lg-end">
-                        <img alt="GIF Image" class="milking-cow--section" src="./img/milking-cow.gif">
-                        <!-- <video src="./img/milking-cow.gif" loop muted autoplay class="milking-cow--section">Your
-                            Browser doesn't support Video.</video> -->
+                <div class="col-lg-6">
+                    <!-- Milk Glass Animation -->
+                    <div class="milk-glass-container">
+                        <img src="./img/glass-of-milk.png" alt="Glass of Milk" class="milk-glass-image img-no-bg" id="milkGlassImage">
+                        <div class="milk-stream" id="milkStream"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="custom-shape-divider-bottom-1703654767">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-
     </section>
 
-    <!-- hero section ends -->
-
-
-    <!-- about farm section starts here -->
-
-    <section class="common-section services-section" id="about_us">
-        <div class="container text-center common-title fw-bold">
-            <h5 class="common-heading">DISCOVER WHAT SANTOK DIARY FARM IS ALL ABOUT</h5>
-            <hr class="w-25 mx-auto ">
-        </div>
-
-        <div class="container mt-5">
-            <div class="row g-5 ">
-                <div class="col-xxl-4 col-lg-4 col-12 ">
-                    <div class=" card-box rounded-2 p-5 text-center">
-                        <img alt="GIF Image" src="./img/customer-service.gif" width="200px" height="150px">
-
-                        <h5 class="my-3 fw-normal ">Great Service</h5>
-                        <p class="pe-3 mb-5">
-                            Our love flows through milk, reaching every corner of our state. From the purest milk to the
-                            golden richness of Ghee, our commitment to your well-being is poured into each product.
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">The Magical Journey</h2>
+                <p class="lead text-muted">From milk to ghee - A transformation of purity</p>
+            </div>
+            
+            <!-- Step 1: Fresh Milk -->
+            <div class="process-step" id="step1">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 step-content">
+                        <span class="step-number">1</span>
+                        <h3 class="fw-bold mb-4">Fresh Milk Collection</h3>
+                        <p class="text-muted mb-4">
+                            Our journey begins at dawn with the collection of fresh, organic milk from our 
+                            <span class="highlight">grass-fed cows</span>. The milk is tested for purity 
+                            and quality before it begins its transformation.
                         </p>
-                        <div class="  d-flex justify-content-center align-items-center ">
-                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                                href="#delivery">
-                                <i class="fa-solid fa-arrow-right"> </i>
-                            </a>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Collected within 2 hours of milking</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Temperature-controlled storage</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Regular quality checks</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Single floating container -->
+                        <div class="floating-container">
+                            <img src="./img/milk-container.png" alt="Milk Container" class="milk-container-img img-no-bg" id="floatingContainer">
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xxl-4 col-lg-4 col-12  ">
-                    <div class=" card-box rounded-2 p-5 text-center shadow ">
-                        <img alt="GIF Image" src="./img/achievement.gif" width="200px" height="150px">
-
-                        <h5 class="my-3 fw-normal">Our Achievements</h5>
-                        <p class="pe-3 mb-5">
-                            At Santok Dairy Farm, we've excelled in dairy farming through quality products and
-                            sustainable practices. Join us on our journey of excellence and get out trust.
+            </div>
+            
+            <!-- Step 2: Natural Cream Separation -->
+            <div class="process-step" id="step2">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2 step-content">
+                        <span class="step-number">2</span>
+                        <h3 class="fw-bold mb-4">Natural Cream Separation</h3>
+                        <p class="text-muted mb-4">
+                            The milk is left to rest naturally, allowing the rich cream to separate 
+                            and rise to the top. This traditional method preserves the 
+                            <span class="highlight">natural nutrients</span> and authentic flavor.
                         </p>
-                        <div class="  d-flex justify-content-center align-items-center ">
-                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                                href="#gallery">
-                                <i class="fa-solid fa-arrow-right"> </i>
-                            </a>
-                        </div>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> No mechanical separation</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> 12-hour natural process</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Preserves natural enzymes</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <!-- Container will move here during scroll -->
                     </div>
                 </div>
-
-                <div class="col-xxl-4 col-lg-4 col-12 ">
-                    <div class=" card-box rounded-2 p-5 text-center">
-                        <img alt="GIF Image" src="./img/cow.gif" width="200px" height="150px">
-                        <h5 class="my-3 fw-normal ">Responsible Farming</h5>
-                        <p class="pe-3 mb-5">
-                            Everyone knows dairy milk comes from cows. But there are some important steps between the
-                            farm and to your fridge. Click to get an idea what happens during process.
+            </div>
+            
+            <!-- Step 3: Slow Cooking -->
+            <div class="process-step" id="step3">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 step-content">
+                        <span class="step-number">3</span>
+                        <h3 class="fw-bold mb-4">Slow Cooking Magic</h3>
+                        <p class="text-muted mb-4">
+                            The cream is slowly cooked over <span class="highlight">traditional fire</span> in 
+                            copper vessels. This slow cooking process transforms cream into 
+                            golden ghee while developing its rich aroma.
                         </p>
-                        <div class="  d-flex justify-content-center align-items-center ">
-                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                                href="#online_services">
-                                <i class="fa-solid fa-arrow-right"> </i>
-                            </a>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> 4-6 hours slow cooking</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Traditional copper vessels</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Constant temperature monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Ghee making container -->
+                        <div class="ghee-process-container">
+                            <img src="./img/milk-container.png" alt="Ghee Container" class="ghee-container img-no-bg" id="gheeContainer">
+                            <div class="flame-effect" id="flameEffect"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- about farm section ends here -->
-
-
-
-    <!-- service section starts here  -->
-
-    <section class="common-section more-info-section bg-color mb-lg-5 mb-md-5 mb-5">
-
-        <section class="container ">
-            <div class="row">
-                <div class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center  img-section">
-                    <figure>
-                        <img alt="mobile chat" class="img-fluid" width="100px" src="./img/phone.gif">
-                    </figure>
-                </div>
-
-                <div
-                    class="col-xl-6 xol-lg-6 col-md-12 col-12 text-center d-flex flex-column justify-content-center align-items-center ">
-
-                    <h1 class="common-heading text-capitalize fw-bolder text-white">
-                        Premium Dairy Products, <br>Available To Your City
-                    </h1>
-                    <p class="mt-3 mb-4 para-width text-light-gray">
-                        Welcome to Santok Dairy Farm, where we bring the finest dairy products right to your city. We're
-                        proud to offer top-quality items, ensuring you have a delightful experience every time. You can
-                        trust us because we focus on sustainable and ethical farming practices. Our cows are treated
-                        with care and respect, guaranteeing fresh and high-quality products for your table. Experience
-                        the difference of farm-to-table goodness with Santok Farm. Discover the taste of quality and the
-                        care we put into every product.
-                    </p>
-
-                    <a href="order.html"> <button class="btn btn-primary px-4 py-2 text-center fw-bold"
-                            data-bs-target="order.html" data-bs-toggle="tooltip" data-bs-title="Order Now">Place
-                            Order</button></a>
-                </div>
-
-
+    <!-- Benefits Section -->
+    <section class="py-5 bg-light" id="benefits">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Benefits of Pure Ghee</h2>
+                <p class="lead text-muted">Why our ghee is special for your health</p>
             </div>
-        </section>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-box p-4 h-100">
+                        <div class="icon-div mx-auto mb-3 d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background: rgba(74, 144, 226, 0.1);">
+                            <i class="fas fa-heart fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold text-center mb-3">Heart Health</h4>
+                        <p class="text-muted text-center">
+                            Rich in Omega-3 fatty acids that support cardiovascular health 
+                            and help maintain healthy cholesterol levels.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-box p-4 h-100">
+                        <div class="icon-div mx-auto mb-3 d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background: rgba(246, 173, 85, 0.1);">
+                            <i class="fas fa-brain fa-3x text-warning"></i>
+                        </div>
+                        <h4 class="fw-bold text-center mb-3">Brain Function</h4>
+                        <p class="text-muted text-center">
+                            Contains healthy fats essential for brain development and 
+                            cognitive function at all ages.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-box p-4 h-100">
+                        <div class="icon-div mx-auto mb-3 d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; background: rgba(120, 179, 245, 0.1);">
+                            <i class="fas fa-bone fa-3x text-info"></i>
+                        </div>
+                        <h4 class="fw-bold text-center mb-3">Strong Bones</h4>
+                        <p class="text-muted text-center">
+                            High in Vitamin K2 which helps in calcium absorption and 
+                            maintains bone density.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-
-    <section class="common-section business-section mb-lg-5 mb-md-5 mb-5">
-        <div class="container text-center fw-bold common-title">
-            <h1 class="common-heading">WHAT WE OFFER</h1>
-            <hr class="w-25 mx-auto ">
+    <!-- Final Product Section -->
+    <section class="py-5" id="final-product">
+        <div class="container">
+            <div class="final-product-container">
+                <img src="./img/packed-ghee.png" alt="Packed Ghee" class="packed-ghee-img img-no-bg">
+            </div>
+            <div class="text-center mt-5">
+                <h2 class="section-title">Pure Golden Ghee</h2>
+                <p class="lead text-muted mb-4">The final result of our traditional process</p>
+                <p class="text-muted mb-5">
+                    After hours of careful processing, we get pure, golden ghee that's 
+                    <span class="highlight">aromatic, nutritious, and packed with health benefits</span>. 
+                    Each batch is tested for purity and quality before reaching your home.
+                </p>
+                <a href="#products" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-basket me-2"></i> Order Now
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="container " id="online_services">
-            <div class="row g-5">
-                <div class="col-xl-6 col-md-12  ">
-                    <div class="d-flex  px-3 py-5 shadow ">
-                        <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/farm.gif"
-                            width="150px">
-
-                        <div class="row ">
-                            <p class="mb-3 fw-bolder">We Help Establish Your Tabela</p>
-                            <p> Establish a thriving farm with our comprehensive guidance. From ground-zero to a
-                                successful tabela,
-                                we provide expert insights and essential information to build a robust and efficient
-                                farming structure. </p>
+    <!-- Products Section -->
+    <section class="py-5 bg-light" id="products">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Premium Products</h2>
+                <p class="lead text-muted">Fresh from our farm to your home</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Product 1: Fresh Milk -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="./img/Milk Pic.jpg" alt="Fresh Milk" class="product-image">
+                            <div class="product-badge">Best Seller</div>
                         </div>
-                    </div>
-                </div>
-
-
-                <div class="col-xl-6 col-md-12 ">
-                    <div class="d-flex  px-3 py-5 shadow ">
-                        <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3" src="./img/cow2.gif"
-                            width="150px">
-
-                        <div class="row ">
-                            <p class="mb-3 fw-bolder">Expert Cow Selection and Care</p>
-                            <p>Discover the Right Dairy Cows: Choose from our expertly curated selection,
-                                and gain insights on preventive measures.
-                                Let us guide you in selecting and caring for your ideal dairy companions. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-6 col-md-12 ">
-                    <div class="d-flex  px-3 py-5 shadow ">
-                        <img alt="GIF Image" class="four-image d-md-block d-none  img-fluid mx-3"
-                            src="./img/cowfeed.gif" width="150px">
-
-                        <div class="row ">
-                            <p class="mb-3 fw-bolder">Feeding Your Dairy Success</p>
-                            <p>Elevate Dairy Nutrition: Our comprehensive support covers cow feeding essentials.
-                                Get expert guidance on the right food for optimal health.
-                                Let us empower your dairy farming journey with nourishing insights </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-6 col-md-12 ">
-                    <div class="d-flex  px-3 py-5 shadow ">
-                        <img alt="GIF Image" class=" d-md-block d-none  img-fluid mx-3" src="./img/speaker.gif"
-                            width="150px">
-
-                        <div class="row ">
-                            <p class="mb-3 fw-bolder">Strategic Cow Breeding</p>
-                            <p>In dairy farming, strategic cow breeding boosts milk production and improves genetic
-                                traits,
-                                ensuring healthy, productive herds. Elevate your farm's success with
-                                thoughtful breeding programs and practices.
+                        <div class="product-info">
+                            <h3 class="product-title">Fresh Cow Milk</h3>
+                            <p class="product-description">
+                                Pasteurized, homogenized milk packed with essential nutrients. 
+                                Available in multiple quantities.
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- service section ends here  -->
-
-    <!-- product starts here  -->
-
-    <section class="common-section business-section product-section bg-black pt-5 pb-5" id="product">
-        <div class="container text-center fw-bold common-title">
-            <h2 class="common-heading text-white">Experience The Difference <br>Only With Us ! </h2>
-            <hr class="w-25 mx-auto text-white">
-        </div>
-
-        <div class="container  mt-5 ">
-            <div class="row d-flex justify-content-center align-items-center ">
-                <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3">
-                    <div class="card-box-product  text-center">
-                        <img alt="GIF Image" class="img-fluid w-100 h-50 rounded-top-4" src="./img/Milk Pic.jpg">
-
-                        <h5 class="my-3 fw-bold text-white ">Milk</h5>
-                        <hr class="w-25 mx-auto text-white">
-                        <p class="pe-3 mb-5 text-gray ">
-                            Discover the freshness of our dairy products, exclusively available in Mehsana City.
-                            From farm-fresh milk to creamy delights,
-                            Experience the difference, only with us.
-                        </p>
-                        <div class="  d-flex justify-content-center align-items-center ">
-                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                                href="order.html#order">
-                                <i class="fa-solid fa-arrow-right"> </i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-6 col-lg-6 col-12 col-md-12 d-flex justify-content-center align-items-center mb-3 ">
-                    <div class=" card-box-product  text-center  ">
-                        <img alt="GIF Image" class="img-fluid w-100 h-50 rounded-top-4" src="./img/Ghee.jpg">
-
-                        <h5 class="my-3 fw-bold text-white ">Ghee</h5>
-                        <hr class="w-25 mx-auto text-white">
-                        <p class="pe-3 mb-5 text-gray">
-                            Savor the golden richness of our ghee, crafted with care and tradition.
-                            Each spoonful embodies purity and quality, adding a touch of richness
-                            to your meals and a smile to your face.
-                        </p>
-                        <div class="  d-flex justify-content-center align-items-center ">
-                            <a class="icon-span d-flex justify-content-center align-items-center rounded-circle mb-3"
-                                href="order.html#order">
-                                <i class="fa-solid fa-arrow-right"> </i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- product ends here  -->
-
-
-    <!-- Delivery part starts here  -->
-
-    <section class="common-section delivery-section ">
-        <div class="container text-center delivery-title fw-bold pt-5 ">
-            <h2 class="common-heading text-black text-uppercase">Locate the Closest Source of Our <br> Dairy Delicacies
-            </h2>
-            <hr class="w-25 mx-auto ">
-        </div>
-
-        <div class="container" id="delivery">
-            <div class="row g-5 pt-5 pb-5">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="d-flex justify-content-center   ">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./img/mehsana.jpg" width="286px" height="190px" class="card-img-top"
-                                alt="Mehsana Image">
-                            <div class="card-body">
-                                <h5 class="card-title mt-2 fw-bold ">MEHSANA</h5>
-                                <p class="card-text mt-3 mb-3">Welcome to Mehsana, where tradition meets taste. Explore
-                                    the charm of Mehsana and discover our dairy delights. </p>
-                                <div class="d-flex justify-content-around">
-                                    <a href="https://www.google.com/maps/place/Santok+Dairy+Farm/@23.7578492,72.3243556,17z/data=!3m1!4b1!4m6!3m5!1s0x395c677740907d61:0x9b6af0daa74d91ee!8m2!3d23.7578492!4d72.3243556!16s%2Fg%2F11f6gjdpbk?entry=ttu"
-                                        target="_blank" class="btn btn-dark px-3 getaddressbutton">Get Address</a>
-                                    <a href="tel:+919825198128">
-                                        <img class="phone-img" src="/img/phone.png" alt="Phone Icon" height="45px"
-                                            width="45px">
-                                    </a>
+                            <div class="product-price">
+                                ₹40 <span class="old-price">₹50</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-control">
+                                    <button class="qty-btn-small minus" data-product="milk">-</button>
+                                    <span>1</span>
+                                    <button class="qty-btn-small plus" data-product="milk">+</button>
                                 </div>
+                                <button class="btn btn-primary add-to-cart" 
+                                        data-product="Fresh Milk" 
+                                        data-price="40"
+                                        data-image="./img/Milk Pic.jpg">
+                                    <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./img/ahmedabad.jpg" width="286px" height="190px" class="card-img-top"
-                                alt="Mehsana Image">
-                            <div class="card-body">
-                                <h5 class="card-title mt-2 fw-bold ">AHMEDABAD</h5>
-                                <p class="card-text mt-3 mb-3">Welcome to Ahmedabad, where tradition meets taste.
-                                    Explore the charm of Mehsana and discover our dairy delights. </p>
-                                <div class="d-flex justify-content-around">
-                                    <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu"
-                                        target="_blank" class="btn btn-dark  getaddressbutton px-3">Get Address</a>
-                                    <a href="tel:+919428045825">
-                                        <img class="phone-img" src="/img/phone.png" alt="Phone Icon" height="45px"
-                                            width="45px">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="d-flex justify-content-center  ">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./img/surat.jpg" width="286px" height="190px" class="card-img-top"
-                                alt="Mehsana Image">
-                            <div class="card-body">
-                                <h5 class="card-title mt-2 fw-bold ">SURAT</h5>
-                                <p class="card-text mt-3 mb-3">Welcome to Surat, where tradition meets taste. Explore
-                                    the charm of Mehsana and discover our dairy delights. </p>
-                                <div class="d-flex justify-content-around">
-                                    <a href="https://www.google.com/maps/place/ratnadeep+society/@21.1599664,72.8074224,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04f96b75707c1:0xb353cc7001df63bb!8m2!3d21.1599664!4d72.8074224!16s%2Fg%2F11f8jk3lzn?entry=ttu"
-                                        target="_blank" class="btn btn-dark getaddressbutton px-3">Get Address</a>
-                                    <a href="tel:+919924097595">
-                                        <img class="phone-img" src="/img/phone.png" alt="Phone Icon" height="45px"
-                                            width="45px">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./img/deesa.jpg" width="286px" height="190px" class="card-img-top"
-                                alt="Mehsana Image">
-                            <div class="card-body">
-                                <h5 class="card-title mt-2 fw-bold ">DEESA</h5>
-                                <p class="card-text mt-3 mb-3">Welcome to DEESA, where tradition meets taste. Explore
-                                    the charm of Mehsana and discover our dairy delights. </p>
-                                <div class="d-flex justify-content-around">
-                                    <a href="https://www.google.com/maps/place/Ompark+society/@24.2559461,72.1937126,18.25z/data=!4m6!3m5!1s0x395cbd7e2369e55f:0xc5387cd588062352!8m2!3d24.2562929!4d72.194422!16s%2Fg%2F11k5x28qfd?entry=ttu"
-                                        target="_blank" class="btn btn-dark getaddressbutton px-3">Get Address</a>
-                                    <a href="tel:+919979320205">
-                                        <img class="phone-img" src="/img/phone.png" alt="Phone Icon" height="45px"
-                                            width="45px">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- Delivery part ends here  -->
-
-
-    <!-- Gallary part starts here -->
-
-
-    <section class="imag-slider">
-        <div class="container">
-            <div class="row">
-                <h2 class="common-heading text-black text-uppercase text-center">AWARDS AND FARM </h2>
-                <hr class="w-25 mx-auto">             
-            </div>
-        <div id="carousel">
-          <a class="selected" onclick="FindPos(this)" href="javascript:void(0);"><img src="img/certificate2.jpg"></a>
-          <a class="next" onclick="FindPos(this)" href="javascript:void(0);"><img src ="img/certificate1.jpg"></a>
-          <a class="nextSecond" onclick="FindPos(this)" href="javascript:void(0);"><img src="img/Tabelo1.jpg"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="img/tabelo2.jpg"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="img/tabelo3.jpg"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="img/certificate3.jpg"></a>
-          <!-- <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="https://via.placeholder.com/800x600/936/fff/?text=7"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="https://via.placeholder.com/800x600/60C/fff/?text=8"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="https://via.placeholder.com/800x600/6f3/fff/?text=9"></a>
-          <a class="hideRight" onclick="FindPos(this)" href="javascript:void(0);"><img src="https://via.placeholder.com/800x600/fff/000/?text=10"></a> -->
-        </div>
-        <div class="buttons">
-          <button id="prev" class="arrow left">
-            <svg width="100%" height="100%" viewBox="0 0 50 80" xml:space="preserve">
-          <polyline fill="none" stroke="#D5AD6D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375"/>
-            </svg>
-          </button>
-          <button id="next" class="arrow right">
-            <svg width="100%" height="100%" viewBox="0 0 50 80" xml:space="preserve">
-          <polyline fill="none" stroke="#D5AD6D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8"/>
-            </svg>
-          </button>
-        </div>
-    </div>
-    </section>
-
                 
-<!-- Gallary part ends here -->
+                <!-- Product 2: Pure Ghee -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="./img/Ghee.jpg" alt="Pure Ghee" class="product-image">
+                            <div class="product-badge">Premium</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Pure Desi Ghee</h3>
+                            <p class="product-description">
+                                Traditional bilona method ghee with rich aroma and taste. 
+                                Perfect for all your cooking needs.
+                            </p>
+                            <div class="product-price">
+                                ₹500 <span class="old-price">₹600</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-control">
+                                    <button class="qty-btn-small minus" data-product="ghee">-</button>
+                                    <span>1</span>
+                                    <button class="qty-btn-small plus" data-product="ghee">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" 
+                                        data-product="Pure Ghee" 
+                                        data-price="500"
+                                        data-image="./img/Ghee.jpg">
+                                    <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3: Fresh Curd -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1567174682090-8c17e0c5f2c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Fresh Curd" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Fresh Curd</h3>
+                            <p class="product-description">
+                                Homemade fresh curd, rich in probiotics and essential for digestion. 
+                                Made daily from fresh milk.
+                            </p>
+                            <div class="product-price">
+                                ₹80 <span class="old-price">₹100</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-control">
+                                    <button class="qty-btn-small minus" data-product="curd">-</button>
+                                    <span>1</span>
+                                    <button class="qty-btn-small plus" data-product="curd">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" 
+                                        data-product="Fresh Curd" 
+                                        data-price="80"
+                                        data-image="https://images.unsplash.com/photo-1567174682090-8c17e0c5f2c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                                    <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="order.html" class="btn btn-primary btn-lg px-5">
+                    <i class="fas fa-shopping-bag me-2"></i> View All Products
+                </a>
+            </div>
+        </div>
+    </section>
 
-
-    <!-- contact us part starts here  -->
-
-    <section class="common-section contact-section text-white bg-color  pt-5 pb-5">
-
-        <div class="custom-shape-divider-top-1704309762">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill"></path>
+    <!-- Footer -->
+    <footer class="main-footer-section">
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
             </svg>
         </div>
-
-        <div class="container text-center fw-bold common-title " id="contact_us">
-            <h2 class="common-heading  text-white">Contact Us</h2>
-            <hr class="w-25 mx-auto text-white ">
-        </div>
-
-        <div class="container">
-            <div class="form-section mx-auto">
-
-                <form id="myForm" action="https://formspree.io/f/mayrqqve" method="POST">
-                    <!-- <form id="myForm" action="submit.php" method="post" onsubmit="submitFormAndSendWhatsApp(); return false;"> -->
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-lg-6 col-12 ">
-                                <label for="exampleFormUserFirstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="exampleFormUserFirstName"
-                                    id="exampleFormUserFirstName" placeholder="First Name" required>
-
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <label for="exampleFormUserLastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="exampleFormUserLastName"
-                                    id="exampleFormUserLastName" placeholder="Last Name" required>
-
-                            </div>
-                        </div>
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="footer-logo">
+                        <i class="fas fa-cow"></i> SANTOK DAIRY FARM
                     </div>
-
-                    <div class="mb-3 ">
-                        <label for="phone" class="form-label">Phone No:</label>
-                        <div class="input-group">
-                            <span class="input-group-text justify-content-center"
-                                style="min-width: 60px; min-height: 30px;">+91</span>
-                            <input type="tel" class="form-control" id="phone" name="Phone" placeholder="01234 56789"
-                                pattern="[0-9]{10}" required>
-                        </div>
+                    <p class="footer-description">
+                        Providing pure, organic dairy products to Gujarat since 2009. 
+                        Your health is our priority. Experience the difference of 
+                        traditional dairy farming.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
-
-
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address (Optional)</label>
-                        <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Enter your email here">
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="#process"><i class="fas fa-arrow-right"></i> Process</a></li>
+                            <li><a href="#products"><i class="fas fa-shopping-cart"></i> Products</a></li>
+                            <li><a href="order.html"><i class="fas fa-shopping-bag"></i> Order</a></li>
+                            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        </ul>
                     </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlTextarea1" class="form-label ">Enter Your Message</label>
-                        <textarea class="form-control" name="exampleFormControlTextarea1"
-                            id="exampleFormControlTextarea1" rows="3" placeholder="Tell us ! How can we Help !"
-                            required></textarea>
-                    </div>
-                    <button type="submit" style="width: 164.27px;" class="btn btn-primary  text-white  px-5 py-2 "
-                        data-bs-toggle="tooltip" data-bs-title="Send E-mail">Submit</button>
-                    <button type="button" onclick="sendWhatsApp();"
-                        class="  mx-lg-3 mx-md-3 btn whatsapp-button text-white  px-4 py-2  mt-md-0 mt-lg-0"
-                        data-bs-toggle="tooltip" data-bs-title="Whatsapp Us">Whatsapp Us</button>
-                </form>
-            </div>
-        </div>
-
-    </section>
-    <!-- contact us part ends here  -->
-
-    <!-- ABOUT OWNER starts here  -->
-
-
-
-
-    <!-- ABOUT OWNER ends here  -->
-
-
-
-    <!-- footer section starts here  -->
-
-    <footer class="main-footer-section bg-color">
-        <div class="contact-details">
-            <div class="container px-5 mb-5">
-                <div class="row g-0">
-                    <div class="col-lg-3  ">
-                        <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
-                            <a href="https://www.instagram.com/santok_dairy_farm/" target="_blank">
-                                <div
-                                    class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                                    <img src="./img/instagram.gif" alt="GIF Image" class="img-fluid icon-image ">
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul class="footer-contact-info">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong><br>
+                                    <a href="tel:+919825198128" style="color: #cbd5e0; text-decoration: none;">+91 98251 98128</a>
                                 </div>
-                            </a>
-                            <p class="text-white fw-bold">Follow Us</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 ">
-                        <div
-                            class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
-                            <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                                <a href="https://wa.me/14372233476" target="_blank">
-                                    <img src="./img/facebook1.gif" alt="GIF Image" class="img-fluid icon-image ">
-                                </a>
-                            </div>
-                            <p class="text-white fw-bold">Follow Facebook</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 ">
-                        <div
-                            class="contact-div p-5 d-flex flex-column justify-content-center align-items-center text-center">
-                            <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                                <a href="https://wa.me/14372233476" target="_blank">
-                                    <img src="./img/whatsapp.gif" alt="GIF Image" class="img-fluid icon-image">
-                                </a>
-                            </div>
-                            <p class="text-white fw-bold">(+91) 98251 98128</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
-                            <a href="mailto:santokdairyfa@gmail.com"
-                                class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                                <img src="./img/mail.gif" alt="GIF Image" class="img-fluid icon-image">
-                            </a>
-                            <p class="text-white fw-bold">santokdairyfarm@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row mb-5 ">
-                    <div class="col-lg-4 col-md-6 col-12 footer-div text-center  mt-4 mb-4  ">
-                        <div>
-                            <h3>ABOUT OUR FARM</h3>
-                            <P>The world required basic needs that is dairy product, now Santok dairy farm has brought
-                                fresh milk and ghee for Gujarat state to taste fresh ard organic milk and ghee.</P>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 footer-div text-center mt-4 mb-4 ">
-                        <div>
-                            <h3>NAVIGATION LINKS</h3>
-                            <li><a class="alink nav-link " href="#home">Home</a></li>
-                            <li><a class="alink nav-link " href="#about_us">About Us</a></li>
-                            <li><a class="alink nav-link " href="#product">Order</a></li>
-                            <li><a class="alink nav-link " href="#contact_us">Contact</a></li>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-4 col-md-12 col-12 footer-div d-flex justify-content-center mt-4 mb-4  text-center ">
-                        <div>
-                            <h3 class="header-color">NEWSLETTER</h3>
-                            <div class="container newsletter-main">
-                                <div class="row">
-                                    <div class="col-lg-12  col-12">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control news-input" placeholder="Email"
-                                                id="demo" name="email">
-                                            <div class="input-group-append">
-                                                <a href=""><span class="input-group-text ">Subscribe</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12  col-12">
-                                        <div class=" mb-3">
-                                            <p class="text-center text-white mb-2">
-                                                Contact US <br>
-                                                <span class="fw-bold"> <a href="tel:+919825198128"
-                                                        style="color: #29a9fd; text-decoration: none;">+91 98251
-                                                        98128</a></span>
-                                            </p>
-                                        </div>
-                                    </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong><br>
+                                    <a href="mailto:santokdairyfarm@gmail.com" style="color: #cbd5e0; text-decoration: none;">santokdairyfarm@gmail.com</a>
                                 </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong><br>
+                                    Mehsana, Gujarat, India
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Hours</strong><br>
+                                    6:00 AM - 9:00 PM Daily
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-newsletter">
+                        <h5>Stay Updated</h5>
+                        <p>Subscribe to our newsletter for updates, offers, and dairy tips.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <p class="small mt-3">
+                            <i class="fas fa-truck me-2"></i>Free delivery on orders above ₹500
+                        </p>
+                        <div class="mt-4">
+                            <h6>Delivery Cities</h6>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                <span class="badge bg-primary">Mehsana</span>
+                                <span class="badge bg-primary">Ahmedabad</span>
+                                <span class="badge bg-primary">Surat</span>
+                                <span class="badge bg-primary">Deesa</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="container">
-                    <hr class="container mx-auto">
-                    <div class="row">
-                        <div class="col-lg-8 col-12 ">
-                            Copyright ©2024 All rights reserved. | This template is made with love by <span
-                                class="bg-theme"> SantokDairyFarm</span>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="scrolltop float-right">
-                <i class="fa fa-arrow-up myBtn" aria-hidden="true" onclick="topFunction()" id="myBtn"></i>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Santok Dairy Farm. All rights reserved. | Made with <i class="fas fa-heart text-danger"></i> for pure dairy lovers</p>
+                <p class="mt-2">
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a> | 
+                    <a href="#">Refund Policy</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- footer section ends here  -->
-
-
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script>const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
-
-    </script>
-
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
+        // Page Loader
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('.page-loader').fadeOut('slow');
+            }, 1000);
+        });
 
-
-
-  /* To do : may be an infinite carousel version
-
-    carouselLength = $(".carousel a").length;
-    firstItem = $(".carousel").children()[0]);
-    lastItem = $(".carousel").children()[carouselLength - 1]);
-  
-  */
-  
-  function moveToSelected(element) {
-  
-    if (element == "next") {
-      var selected = $(".selected").next();
-    } else if (element == "prev") {
-      var selected = $(".selected").prev();
-    } else {
-      var selected = element;
-    }
-  
-    var next = $(selected).next();
-    var prev = $(selected).prev();
-    var prevSecond = $(prev).prev();
-    var nextSecond = $(next).next();
-  
-    $(selected).removeClass().addClass("selected");
-  
-    $(prev).removeClass().addClass("prev");
-    $(next).removeClass().addClass("next");
-  
-    $(nextSecond).removeClass().addClass("nextSecond");
-    $(prevSecond).removeClass().addClass("prevSecond");
-  
-    // no limit
-    $(nextSecond).nextAll().removeClass().addClass('hideRight');
-    $(prevSecond).prevAll().removeClass().addClass('hideLeft');
-  };
-  
-  // Just to test, remove onclick in <a> and put your link in href
-  function FindPos(obj) {
-    const posElement = Array.from(obj.parentNode.children).indexOf(obj) + 1; //  JQuery : $('#carousel a').index(obj) + 1;
-    const nbElements = obj.parentNode.childElementCount; // with JQuery : $('#carousel a').length;
-    console.log( "Menu n°" + posElement + " on " + nbElements + " clicked (Class => " + obj.className + ")");
-  };
-  
-  // Keyboard events
-  $(document).keydown(function(e) {
-      switch(e.which) {
-        case 37: // Keyboard : left arrow
-          moveToSelected('prev');
-          break;
-  
-        case 39: // Keyboard : right arrow
-          moveToSelected('next');
-          break;
-  
-          default: return;
-      }
-      e.preventDefault();
-  });
-  
-  // Mouse click
-  $('#carousel a').click(function() {
-    moveToSelected($(this));
-  });
-  
-  // Buttons events
-  $('#prev').click(function() {
-    moveToSelected('prev');
-  });
-  
-  $('#next').click(function() {
-    moveToSelected('next');
-  });
-  
-
-
-
-        function sendWhatsApp() {
-            var phonenumber = "+14372233476";
-
-            var firstName = document.getElementById("exampleFormUserFirstName").value;
-            var lastName = document.getElementById("exampleFormUserLastName").value;
-            var phone = document.getElementById("phone").value;
-            var email = document.getElementById("exampleInputEmail1").value;
-            var message = document.getElementById("exampleFormControlTextarea1").value;
-
-            if (!firstName || !lastName || !phone) {
-                alert("(First Name, Last Name, Phone No) is required ");
+        // Cart System
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function updateCart() {
+            const cartItems = $('#cart-items');
+            const navCartCount = $('#nav-cart-count');
+            const floatingCartCount = $('#cart-floating-count');
+            const cartSubtotal = $('#cart-subtotal');
+            const cartDelivery = $('#cart-delivery');
+            const cartTotalPrice = $('#cart-total-price');
+            
+            cartItems.empty();
+            
+            if (cart.length === 0) {
+                cartItems.html(`
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p class="mt-3">Your cart is empty</p>
+                        <a href="order.html" class="btn btn-outline-primary mt-3">Browse Products</a>
+                    </div>
+                `);
+                navCartCount.text('0');
+                floatingCartCount.text('0');
+                cartSubtotal.text('₹0');
+                cartDelivery.text('₹50');
+                cartTotalPrice.text('₹50');
                 return;
             }
-
-
-            var url = "https://wa.me/" + phonenumber + "?text="
-                + "First Name :  " + firstName + "%0a"
-                + "Last Name :  " + lastName + "%0a"
-                + "Phone No :  " + phone + "%0a"
-                + "E-mail :  " + email + "%0a"
-                + "Message :  " + message + "%0a%0a"
-                + "This is a Contact from Website.";
-
-            window.open(url, '_blank').focus();
+            
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                cartItems.append(`
+                    <div class="cart-item" data-index="${index}">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">₹${item.price} × ${item.quantity}</div>
+                            <div class="cart-item-controls">
+                                <div class="cart-item-qty">
+                                    <button class="qty-btn-small decrease-item" data-index="${index}">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button class="qty-btn-small increase-item" data-index="${index}">+</button>
+                                </div>
+                                <span class="ms-auto fw-bold">₹${itemTotal}</span>
+                                <button class="cart-remove-btn ms-3 remove-item" data-index="${index}" title="Remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+            
+            const delivery = subtotal >= 500 ? 0 : 50;
+            const total = subtotal + delivery;
+            
+            navCartCount.text(cart.length);
+            floatingCartCount.text(cart.length);
+            cartSubtotal.text('₹' + subtotal);
+            cartDelivery.text('₹' + delivery);
+            cartTotalPrice.text('₹' + total);
         }
-
-
-
-
-
-        mybutton = document.getElementById("myBtn");
-
-        window.onscroll = function () { scrollFunction() };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                mybutton.style.display = "block";
+        
+        // Add to Cart
+        $('.add-to-cart').click(function() {
+            const product = $(this).data('product');
+            const price = $(this).data('price');
+            const image = $(this).data('image');
+            const quantity = parseInt($(this).closest('.product-card').find('.quantity-control span').text());
+            
+            // Check if already in cart
+            const existingIndex = cart.findIndex(item => item.name === product);
+            
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
             } else {
-                mybutton.style.display = "none";
+                cart.push({
+                    name: product,
+                    price: price,
+                    quantity: quantity,
+                    image: image
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+            showNotification(`${product} added to cart!`);
+        });
+        
+        // Quantity Controls
+        $('.plus').click(function() {
+            const span = $(this).siblings('span');
+            let value = parseInt(span.text());
+            span.text(value + 1);
+        });
+        
+        $('.minus').click(function() {
+            const span = $(this).siblings('span');
+            let value = parseInt(span.text());
+            if (value > 1) {
+                span.text(value - 1);
+            }
+        });
+        
+        // Cart Item Controls
+        $(document).on('click', '.increase-item', function() {
+            const index = $(this).data('index');
+            cart[index].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        });
+        
+        $(document).on('click', '.decrease-item', function() {
+            const index = $(this).data('index');
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            }
+        });
+        
+        $(document).on('click', '.remove-item', function() {
+            const index = $(this).data('index');
+            const itemName = cart[index].name;
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+            showNotification(`${itemName} removed from cart`);
+        });
+        
+        // Cart Toggle
+        $('#cart-toggle, #nav-cart-toggle').click(function() {
+            $('.cart-sidebar').addClass('active');
+            $('.cart-overlay').addClass('active');
+            $('body').css('overflow', 'hidden');
+        });
+        
+        $('.close-cart, .cart-overlay').click(function() {
+            $('.cart-sidebar').removeClass('active');
+            $('.cart-overlay').removeClass('active');
+            $('body').css('overflow', 'auto');
+        });
+        
+        // Checkout
+        $('#checkout-btn').click(function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            window.location.href = 'order.html';
+        });
+        
+        // Show Notification
+        function showNotification(message) {
+            const notification = $(`
+                <div class="position-fixed" style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+                    <div class="alert alert-success shadow-lg animate__animated animate__fadeInRight">
+                        <i class="fas fa-check-circle me-2"></i>
+                        ${message}
+                    </div>
+                </div>
+            `);
+            
+            $('body').append(notification);
+            
+            setTimeout(() => {
+                notification.fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            }, 3000);
+        }
+        
+        // Milk Glass Animation
+        let isPouring = false;
+        
+        function updateMilkGlass(scrollPosition) {
+            const glassImage = $('#milkGlassImage');
+            const milkStream = $('#milkStream');
+            const windowHeight = $(window).height();
+            
+            // Calculate pour progress (0 to 1)
+            let pourProgress = Math.min(Math.max((scrollPosition - 300) / (windowHeight * 1.5), 0), 1);
+            
+            // Rotate glass when pouring
+            if (pourProgress > 0.3 && pourProgress < 0.8) {
+                const rotateAngle = 45 * Math.min((pourProgress - 0.3) / 0.5, 1);
+                glassImage.css('transform', `rotate(${rotateAngle}deg)`);
+                
+                // Show milk stream
+                if (!isPouring) {
+                    isPouring = true;
+                    milkStream.css({
+                        'opacity': '1',
+                        'height': '200px'
+                    });
+                }
+            } else {
+                glassImage.css('transform', 'rotate(0deg)');
+                milkStream.css({
+                    'opacity': '0',
+                    'height': '0'
+                });
+                isPouring = false;
             }
         }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+        
+        // Single Container Animation
+        let containerVisible = false;
+        let containerInStep2 = false;
+        let gheeContainerVisible = false;
+        
+        function updateContainerAnimation(scrollPosition) {
+            const container = $('#floatingContainer');
+            const gheeContainer = $('#gheeContainer');
+            const flameEffect = $('#flameEffect');
+            const step1 = $('#step1');
+            const step2 = $('#step2');
+            const step3 = $('#step3');
+            
+            const step1Top = step1.offset().top;
+            const step1Bottom = step1Top + step1.height();
+            const step2Top = step2.offset().top;
+            const step2Bottom = step2Top + step2.height();
+            const step3Top = step3.offset().top;
+            
+            // Show container when entering step 1
+            if (scrollPosition > step1Top - 300 && scrollPosition < step1Bottom) {
+                if (!containerVisible) {
+                    containerVisible = true;
+                    container.addClass('visible');
+                }
+                container.css({
+                    'transform': 'translateX(0) scale(1)',
+                    'opacity': '1'
+                });
+            } else if (scrollPosition >= step2Top - 400 && scrollPosition < step2Bottom) {
+                // Container moves to step 2 position
+                const progress = (scrollPosition - (step2Top - 400)) / 300;
+                const scale = 0.8 + (0.2 * Math.min(progress, 1));
+                const translateX = -100 * Math.min(progress, 1);
+                
+                container.css({
+                    'transform': `translateX(${translateX}px) scale(${scale})`,
+                    'opacity': '1'
+                });
+                
+                containerInStep2 = true;
+            } else if (scrollPosition >= step3Top - 400) {
+                // Hide milk container, show ghee container with flame
+                container.css('opacity', '0');
+                
+                if (!gheeContainerVisible) {
+                    gheeContainerVisible = true;
+                    gheeContainer.addClass('visible');
+                    flameEffect.addClass('active');
+                }
+                
+                const progress = (scrollPosition - (step3Top - 400)) / 300;
+                const scale = 0.7 + (0.3 * Math.min(progress, 1));
+                
+                gheeContainer.css({
+                    'transform': `scale(${scale})`,
+                    'opacity': '1'
+                });
+                
+                // Change container color to ghee color
+                if (progress > 0.5) {
+                    gheeContainer.css('filter', 
+                        'drop-shadow(0 20px 40px rgba(0,0,0,0.25)) ' +
+                        'hue-rotate(30deg) saturate(1.3)'
+                    );
+                }
+            } else {
+                // Hide containers
+                container.css('opacity', '0');
+                gheeContainer.css('opacity', '0');
+                flameEffect.removeClass('active');
+                containerVisible = false;
+                gheeContainerVisible = false;
+            }
         }
-
-
-
-
-        // gallery starts here
-
-
-        let next = document.querySelector('.next')
-        let prev = document.querySelector('.prev')
-
-        next.addEventListener('click', function () {
-            let items = document.querySelectorAll('.item')
-            document.querySelector('.slide').appendChild(items[0])
-        })
-
-        prev.addEventListener('click', function () {
-            let items = document.querySelectorAll('.item')
-            document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
-        })
+        
+        // Navbar Scroll Effect
+        $(window).scroll(function() {
+            const scrollPosition = $(this).scrollTop();
+            const navbar = $('#mainNav');
+            
+            // Navbar background
+            if (scrollPosition > 50) {
+                navbar.addClass('navbar-scrolled');
+            } else {
+                navbar.removeClass('navbar-scrolled');
+            }
+            
+            // Update animations
+            updateMilkGlass(scrollPosition);
+            updateContainerAnimation(scrollPosition);
+        });
+        
+        // Smooth Scroll
+        $('a[href^="#"]').click(function(e) {
+            e.preventDefault();
+            const target = $(this.hash);
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80
+                }, 800);
+            }
+        });
+        
+        // Initialize on page load
+        $(document).ready(function() {
+            updateCart();
+            
+            // Initialize animations
+            updateMilkGlass($(window).scrollTop());
+            updateContainerAnimation($(window).scrollTop());
+            
+            // Close cart on escape key
+            $(document).keydown(function(e) {
+                if (e.key === 'Escape') {
+                    $('.cart-sidebar').removeClass('active');
+                    $('.cart-overlay').removeClass('active');
+                    $('body').css('overflow', 'auto');
+                }
+            });
+            
+            // Newsletter form
+            $('.newsletter-form').submit(function(e) {
+                e.preventDefault();
+                const email = $(this).find('input').val();
+                if (email) {
+                    showNotification('Thank you for subscribing!');
+                    $(this).find('input').val('');
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
