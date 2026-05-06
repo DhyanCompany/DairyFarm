@@ -88,6 +88,11 @@
             color: white;
             box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
         }
+
+        .order-step.completed .step-circle {
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            color: white;
+        }
         
         .step-label {
             font-weight: 500;
@@ -97,6 +102,11 @@
         
         .order-step.active .step-label {
             color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        .order-step.completed .step-label {
+            color: #2f855a;
             font-weight: 600;
         }
         
@@ -141,6 +151,60 @@
             position: sticky;
             top: 100px;
             border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .quick-order-panel,
+        .order-confirmation-card {
+            background: white;
+            border: 1px solid rgba(74, 144, 226, 0.16);
+            border-radius: 16px;
+            box-shadow: 0 18px 42px rgba(44, 82, 130, 0.08);
+        }
+
+        .quick-order-panel {
+            padding: 18px;
+            margin-bottom: 24px;
+        }
+
+        .quick-order-items {
+            color: #4a5568;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .order-confirmation-card {
+            padding: 34px;
+        }
+
+        .tracking-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .tracking-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px;
+            border-radius: 12px;
+            background: #f7fafc;
+        }
+
+        .tracking-item i {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(74, 144, 226, 0.12);
+            color: var(--primary-blue);
+        }
+
+        .tracking-item.active i {
+            background: rgba(56, 161, 105, 0.14);
+            color: #2f855a;
         }
         
         @media (max-width: 768px) {
@@ -211,7 +275,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-cow"></i> SANTOK DAIRY FARM
+                <img src="./img/Logo.png" alt="Santok Dairy Farm Logo" style="height: 50px; width: auto; margin-right: 10px;">
+                SANTOK DAIRY FARM
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -254,7 +319,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="./img/packed-ghee.png" alt="Packed Ghee" class="packed-ghee-img img-no-bg" style="max-height: 300px;">
+                    <img src="./img/packed-ghee-cutout.png" alt="Packed Ghee" class="packed-ghee-img img-no-bg" style="max-height: 300px;">
                 </div>
             </div>
         </div>
@@ -285,7 +350,7 @@
     <!-- Order Form -->
     <section class="py-5" id="order-form">
         <div class="container">
-            <form id="orderForm" action="https://formspree.io/f/mayrqqve" method="POST">
+            <form id="orderForm" action="https://formspree.io/f/xrejkkkn" method="POST">
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Products Section -->
@@ -294,6 +359,9 @@
                             <div class="alert alert-info mb-4">
                                 <i class="fas fa-info-circle me-2"></i>
                                 Products added to cart from homepage are automatically loaded here.
+                            </div>
+                            <div id="quick-order-panel" class="quick-order-panel d-none">
+                                <!-- Last order will be loaded here -->
                             </div>
                             <div class="row g-4" id="products-list">
                                 <!-- Products will be loaded here -->
@@ -465,7 +533,7 @@
                                     <a href="tel:+919825198128" class="btn btn-outline-primary btn-sm">
                                         <i class="fas fa-phone"></i> Call
                                     </a>
-                                    <a href="https://wa.me/919825198128" class="btn btn-outline-success btn-sm">
+                                    <a href="https://wa.me/919825198128?text=Hello%20Santok%20Dairy%20Farm%2C%20I%20need%20help%20with%20my%20order." target="_blank" rel="noopener" class="btn btn-outline-success btn-sm">
                                         <i class="fab fa-whatsapp"></i> WhatsApp
                                     </a>
                                     <a href="mailto:santokdairyfarm@gmail.com" class="btn btn-outline-danger btn-sm">
@@ -483,13 +551,22 @@
         </div>
     </section>
 
+    <section class="py-5 d-none" id="order-confirmation">
+        <div class="container">
+            <div class="order-confirmation-card" id="order-confirmation-card">
+                <!-- Order tracking will be shown here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="main-footer-section">
         <div class="container footer-content">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="footer-logo">
-                        <i class="fas fa-cow"></i> SANTOK DAIRY FARM
+                    <div class="footer-logo" style="display: flex; align-items: center;">
+                        <img src="./img/Logo.png" alt="Santok Dairy Farm Logo" style="height: 45px; width: auto; margin-right: 10px;">
+                        <span>SANTOK DAIRY FARM</span>
                     </div>
                     <p class="footer-description">
                         Order fresh dairy products online and get them delivered to your doorstep. 
@@ -497,8 +574,8 @@
                     </p>
                     <div class="footer-social">
                         <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/santok_dairy_farm/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919825198128?text=Hello%20Santok%20Dairy%20Farm%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -559,7 +636,7 @@
                             <a href="tel:+919825198128" class="btn btn-outline-light w-100 mb-2">
                                 <i class="fas fa-phone me-2"></i> Call Support
                             </a>
-                            <a href="https://wa.me/919825198128" class="btn btn-outline-light w-100">
+                            <a href="https://wa.me/919825198128?text=Hello%20Santok%20Dairy%20Farm%2C%20I%20need%20help%20with%20my%20order." target="_blank" rel="noopener" class="btn btn-outline-light w-100">
                                 <i class="fab fa-whatsapp me-2"></i> WhatsApp
                             </a>
                         </div>
@@ -598,7 +675,7 @@
                 id: 1,
                 name: "Fresh Cow Milk",
                 price: 40,
-                image: "./img/Milk Pic.jpg",
+                image: "./img/Milk.png",
                 unit: "Liter",
                 description: "Pasteurized, homogenized milk packed with essential nutrients."
             },
@@ -606,7 +683,7 @@
                 id: 2,
                 name: "Pure Ghee (500gm)",
                 price: 250,
-                image: "./img/Ghee.jpg",
+                image: "./img/packed-ghee-cutout.png",
                 unit: "500gm Jar",
                 description: "Traditional bilona method ghee in 500gm jar."
             },
@@ -614,7 +691,7 @@
                 id: 3,
                 name: "Pure Ghee (1kg)",
                 price: 500,
-                image: "./img/Ghee.jpg",
+                image: "./img/MultiGhee.png",
                 unit: "1kg Jar",
                 description: "Traditional bilona method ghee in 1kg jar."
             },
@@ -622,14 +699,104 @@
                 id: 4,
                 name: "Fresh Curd",
                 price: 60,
-                image: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                image: "./img/Dahi.png",
                 unit: "500gm",
                 description: "Fresh homemade curd, perfect for daily consumption."
             }
         ];
+
+        const LAST_ORDER_KEY = 'santokLastOrder';
+        const ORDER_HISTORY_KEY = 'santokOrderHistory';
+        const WHATSAPP_ORDER_URL = 'https://wa.me/919825198128';
         
         // Cart System
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function formatCurrency(amount) {
+            return '&#8377;' + Number(amount).toFixed(Number.isInteger(Number(amount)) ? 0 : 2);
+        }
+
+        function getOrderTotals(items = cart) {
+            const subtotal = items.reduce((sum, item) => sum + Number(item.price) * Number(item.quantity), 0);
+            const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 50;
+            const tax = subtotal * 0.05;
+            return {
+                subtotal,
+                delivery,
+                tax,
+                total: subtotal + delivery + tax
+            };
+        }
+
+        function saveCart() {
+            if (cart.length === 0) {
+                localStorage.removeItem('cart');
+            } else {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+        }
+
+        function mergeItems(baseItems, incomingItems) {
+            const merged = [...baseItems];
+
+            incomingItems.forEach(item => {
+                const existingIndex = merged.findIndex(existing => existing.name === item.name);
+                if (existingIndex > -1) {
+                    merged[existingIndex].quantity = Number(merged[existingIndex].quantity) + Number(item.quantity);
+                } else {
+                    merged.push({ ...item, quantity: Number(item.quantity) });
+                }
+            });
+
+            return merged;
+        }
+
+        function createOrderId() {
+            const now = new Date();
+            const stamp = now.toISOString().replace(/[-:TZ.]/g, '').slice(0, 14);
+            const suffix = Math.floor(1000 + Math.random() * 9000);
+            return `SDF-${stamp}-${suffix}`;
+        }
+
+        function getFormDetails() {
+            const form = document.getElementById('orderForm');
+            const formData = new FormData(form);
+            return Object.fromEntries(formData.entries());
+        }
+
+        function setOrderStep(activeIndex) {
+            $('.order-step').each(function(index) {
+                $(this)
+                    .toggleClass('active', index === activeIndex)
+                    .toggleClass('completed', index < activeIndex);
+            });
+        }
+
+        function hasDeliveryDetails() {
+            const form = document.getElementById('orderForm');
+            if (!form) return false;
+
+            const requiredFields = ['firstName', 'lastName', 'phone', 'city', 'address'];
+            return requiredFields.every(name => {
+                const field = form.elements[name];
+                return field && field.value.trim() && field.checkValidity();
+            });
+        }
+
+        function updateOrderSteps() {
+            if (!$('#order-confirmation').hasClass('d-none')) {
+                setOrderStep(3);
+                return;
+            }
+
+            if (cart.length === 0) {
+                setOrderStep(0);
+            } else if (hasDeliveryDetails()) {
+                setOrderStep(2);
+            } else {
+                setOrderStep(1);
+            }
+        }
         
         function updateCart() {
             const cartItems = $('#cart-items');
@@ -657,16 +824,18 @@
                 `);
                 navCartCount.text('0');
                 floatingCartCount.text('0');
-                cartSubtotal.text('₹0');
-                cartDelivery.text('₹50');
-                cartTotalPrice.text('₹50');
+                cartSubtotal.html(formatCurrency(0));
+                cartDelivery.html(formatCurrency(0));
+                cartTotalPrice.html(formatCurrency(0));
                 
                 // Update order summary
                 orderItems.html('<p class="text-muted text-center py-3">No items added yet</p>');
-                orderSubtotal.text('₹0');
-                orderDelivery.text('₹50');
-                orderTax.text('₹0');
-                orderTotal.text('₹50');
+                orderSubtotal.html(formatCurrency(0));
+                orderDelivery.html(formatCurrency(0));
+                orderTax.html(formatCurrency(0));
+                orderTotal.html(formatCurrency(0));
+                $('[name="orderDetails"]').remove();
+                updateOrderSteps();
                 return;
             }
             
@@ -682,14 +851,14 @@
                         <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                         <div class="cart-item-info">
                             <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">₹${item.price} × ${item.quantity}</div>
+                            <div class="cart-item-price">${formatCurrency(item.price)} x ${item.quantity}</div>
                             <div class="cart-item-controls">
                                 <div class="cart-item-qty">
                                     <button class="qty-btn-small decrease-item" data-index="${index}">-</button>
                                     <span>${item.quantity}</span>
                                     <button class="qty-btn-small increase-item" data-index="${index}">+</button>
                                 </div>
-                                <span class="ms-auto fw-bold">₹${itemTotal}</span>
+                                <span class="ms-auto fw-bold">${formatCurrency(itemTotal)}</span>
                                 <button class="cart-remove-btn ms-3 remove-item" data-index="${index}" title="Remove">
                                     <i class="fas fa-trash"></i>
                                 </button>
@@ -699,16 +868,14 @@
                 `);
             });
             
-            const delivery = subtotal >= 500 ? 0 : 50;
-            const tax = subtotal * 0.05;
-            const total = subtotal + delivery + tax;
+            const { delivery, tax, total } = getOrderTotals();
             
             // Update cart counts and totals
             navCartCount.text(cart.length);
             floatingCartCount.text(cart.length);
-            cartSubtotal.text('₹' + subtotal);
-            cartDelivery.text('₹' + delivery);
-            cartTotalPrice.text('₹' + total.toFixed(2));
+            cartSubtotal.html(formatCurrency(subtotal));
+            cartDelivery.html(formatCurrency(delivery));
+            cartTotalPrice.html(formatCurrency(total));
             
             // Update order summary
             orderItems.empty();
@@ -718,21 +885,26 @@
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div>
                             <h6 class="fw-bold mb-0">${item.name}</h6>
-                            <p class="text-muted small mb-0">₹${item.price} × ${item.quantity}</p>
+                            <p class="text-muted small mb-0">${formatCurrency(item.price)} x ${item.quantity}</p>
                         </div>
-                        <span class="fw-bold">₹${itemTotal}</span>
+                        <span class="fw-bold">${formatCurrency(itemTotal)}</span>
                     </div>
                 `);
             });
             
-            orderSubtotal.text('₹' + subtotal);
-            orderDelivery.text('₹' + delivery);
-            orderTax.text('₹' + tax.toFixed(2));
-            orderTotal.text('₹' + total.toFixed(2));
+            orderSubtotal.html(formatCurrency(subtotal));
+            orderDelivery.html(formatCurrency(delivery));
+            orderTax.html(formatCurrency(tax));
+            orderTotal.html(formatCurrency(total));
             
             // Update form hidden field
             $('[name="orderDetails"]').remove();
-            $('#orderForm').append(`<input type="hidden" name="orderDetails" value='${JSON.stringify(cart)}'>`);
+            $('<input>', {
+                type: 'hidden',
+                name: 'orderDetails',
+                value: JSON.stringify(cart)
+            }).appendTo('#orderForm');
+            updateOrderSteps();
         }
         
         // Load products list
@@ -756,7 +928,7 @@
                                 <h3 class="product-title">${product.name}</h3>
                                 <p class="product-description">${product.description}</p>
                                 <div class="product-price">
-                                    ₹${product.price}
+                                    ${formatCurrency(product.price)}
                                     <span class="ms-2 small text-muted">per ${product.unit}</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -778,12 +950,166 @@
                 `);
             });
         }
+
+        function getLastOrder() {
+            try {
+                return JSON.parse(localStorage.getItem(LAST_ORDER_KEY));
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function renderQuickOrder() {
+            const panel = $('#quick-order-panel');
+            const lastOrder = getLastOrder();
+
+            if (!lastOrder || !Array.isArray(lastOrder.items) || lastOrder.items.length === 0) {
+                panel.addClass('d-none').empty();
+                return;
+            }
+
+            const orderedAt = new Date(lastOrder.createdAt).toLocaleString('en-IN', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit'
+            });
+            const itemsText = lastOrder.items
+                .map(item => `${item.name} x ${item.quantity}`)
+                .join(', ');
+
+            panel.removeClass('d-none').html(`
+                <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
+                    <div>
+                        <h5 class="fw-bold mb-1"><i class="fas fa-repeat me-2"></i>Quick Order</h5>
+                        <div class="quick-order-items">${itemsText}</div>
+                        <p class="text-muted small mb-0">Last ordered ${orderedAt} - Order ${lastOrder.id}</p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary quick-reorder">
+                        <i class="fas fa-cart-plus me-2"></i> Add Last Order
+                    </button>
+                </div>
+            `);
+        }
+
+        function storeOrderRecord(orderRecord) {
+            localStorage.setItem(LAST_ORDER_KEY, JSON.stringify(orderRecord));
+
+            let history = [];
+            try {
+                history = JSON.parse(localStorage.getItem(ORDER_HISTORY_KEY)) || [];
+            } catch (error) {
+                history = [];
+            }
+
+            history.unshift(orderRecord);
+            localStorage.setItem(ORDER_HISTORY_KEY, JSON.stringify(history.slice(0, 10)));
+        }
+
+        function buildWhatsAppOrderLink(orderRecord) {
+            const itemsText = orderRecord.items
+                .map(item => `${item.name} x ${item.quantity}`)
+                .join(', ');
+            const message = [
+                `Hello Santok Dairy Farm, I placed order ${orderRecord.id}.`,
+                `Items: ${itemsText}.`,
+                `Total: Rs. ${orderRecord.totals.total.toFixed(2)}.`,
+                `City: ${orderRecord.customer.city}.`
+            ].join(' ');
+
+            return `${WHATSAPP_ORDER_URL}?text=${encodeURIComponent(message)}`;
+        }
+
+        function showOrderConfirmation(orderRecord) {
+            const itemsHtml = orderRecord.items.map(item => `
+                <div class="d-flex justify-content-between border-bottom py-2">
+                    <span>${item.name} x ${item.quantity}</span>
+                    <strong>${formatCurrency(Number(item.price) * Number(item.quantity))}</strong>
+                </div>
+            `).join('');
+
+            $('#order-confirmation-card').html(`
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-7">
+                        <span class="badge bg-success mb-3">Order Confirmed</span>
+                        <h2 class="fw-bold mb-2">Tracking: ${orderRecord.id}</h2>
+                        <p class="text-muted mb-4">
+                            We saved your order locally and cleared your cart. Our team will contact you shortly to confirm delivery.
+                        </p>
+                        ${itemsHtml}
+                        <div class="d-flex justify-content-between pt-3 fs-5">
+                            <span class="fw-bold">Order Total</span>
+                            <strong>${formatCurrency(orderRecord.totals.total)}</strong>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <a href="${buildWhatsAppOrderLink(orderRecord)}" target="_blank" rel="noopener" class="btn btn-success">
+                                <i class="fab fa-whatsapp me-2"></i> Send on WhatsApp
+                            </a>
+                            <button type="button" class="btn btn-outline-primary quick-reorder">
+                                <i class="fas fa-repeat me-2"></i> Order Same Again
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 class="fw-bold mb-3">Order Tracking</h5>
+                        <div class="tracking-list">
+                            <div class="tracking-item active">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Order received</strong>
+                                    <p class="text-muted small mb-0">Your order details are recorded.</p>
+                                </div>
+                            </div>
+                            <div class="tracking-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Confirmation call</strong>
+                                    <p class="text-muted small mb-0">We will confirm availability and delivery timing.</p>
+                                </div>
+                            </div>
+                            <div class="tracking-item">
+                                <i class="fas fa-truck"></i>
+                                <div>
+                                    <strong>Out for delivery</strong>
+                                    <p class="text-muted small mb-0">${orderRecord.customer.deliveryTime} delivery to ${orderRecord.customer.city}.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `);
+
+            $('#order-confirmation').removeClass('d-none');
+            setOrderStep(3);
+            $('html, body').animate({
+                scrollTop: $('#order-confirmation').offset().top - 90
+            }, 700);
+        }
+
+        async function sendOrderToFormspree(form, orderRecord) {
+            const formData = new FormData(form);
+            formData.set('orderId', orderRecord.id);
+            formData.set('orderTotal', orderRecord.totals.total.toFixed(2));
+            formData.set('orderDetails', JSON.stringify(orderRecord.items));
+            formData.set('trackingStatus', 'Order received');
+
+            try {
+                await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { Accept: 'application/json' }
+                });
+            } catch (error) {
+                console.warn('Order notification could not be sent automatically.', error);
+            }
+        }
         
         // Cart Item Controls
         $(document).on('click', '.increase-item', function() {
             const index = $(this).data('index');
             cart[index].quantity += 1;
-            localStorage.setItem('cart', JSON.stringify(cart));
+            saveCart();
             updateCart();
             loadProducts();
         });
@@ -792,7 +1118,7 @@
             const index = $(this).data('index');
             if (cart[index].quantity > 1) {
                 cart[index].quantity -= 1;
-                localStorage.setItem('cart', JSON.stringify(cart));
+                saveCart();
                 updateCart();
                 loadProducts();
             }
@@ -802,7 +1128,7 @@
             const index = $(this).data('index');
             const itemName = cart[index].name;
             cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
+            saveCart();
             updateCart();
             loadProducts();
             showNotification(`${itemName} removed from cart`);
@@ -850,10 +1176,29 @@
                 });
             }
             
-            localStorage.setItem('cart', JSON.stringify(cart));
+            saveCart();
             updateCart();
             loadProducts();
             showNotification(`${product} added to cart!`);
+        });
+
+        $(document).on('click', '.quick-reorder', function() {
+            const lastOrder = getLastOrder();
+
+            if (!lastOrder || !Array.isArray(lastOrder.items) || lastOrder.items.length === 0) {
+                showNotification('No previous order found yet.');
+                return;
+            }
+
+            $('#order-confirmation').addClass('d-none');
+            cart = mergeItems(cart, lastOrder.items);
+            saveCart();
+            updateCart();
+            loadProducts();
+            showNotification('Last order added to your cart.');
+            $('html, body').animate({
+                scrollTop: $('#order-form').offset().top - 80
+            }, 700);
         });
         
         // Cart Toggle
@@ -886,6 +1231,7 @@
             $(this).addClass('selected');
             const time = $(this).data('time');
             $('#deliveryTime').val(time);
+            updateOrderSteps();
         });
         
         // Payment Options
@@ -894,6 +1240,11 @@
             $(this).addClass('selected');
             const payment = $(this).data('payment');
             $('#paymentMethod').val(payment);
+            updateOrderSteps();
+        });
+
+        $(document).on('input change', '#orderForm input, #orderForm textarea, #orderForm select', function() {
+            updateOrderSteps();
         });
         
         // Show Notification
@@ -918,25 +1269,55 @@
         
         // Form Submission
         $('#orderForm').submit(function(e) {
+            e.preventDefault();
+
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return false;
+            }
+
             if (cart.length === 0) {
-                e.preventDefault();
                 showNotification('Please add at least one product to your order.');
                 return false;
             }
-            
-            // Update order steps
-            $('.order-step').removeClass('active');
-            $('.order-step').eq(3).addClass('active');
-            
-            showNotification('Order submitted successfully! We will contact you shortly.');
-            
-            // Clear cart after successful order
-            setTimeout(() => {
-                cart = [];
-                localStorage.removeItem('cart');
-                updateCart();
-                loadProducts();
-            }, 3000);
+
+            const details = getFormDetails();
+            const orderRecord = {
+                id: createOrderId(),
+                createdAt: new Date().toISOString(),
+                items: cart.map(item => ({
+                    name: item.name,
+                    price: Number(item.price),
+                    quantity: Number(item.quantity),
+                    image: item.image
+                })),
+                totals: getOrderTotals(),
+                customer: {
+                    firstName: details.firstName,
+                    lastName: details.lastName,
+                    phone: details.phone,
+                    email: details.email || '',
+                    city: details.city,
+                    address: details.address,
+                    deliveryTime: details.deliveryTime || 'morning',
+                    paymentMethod: details.paymentMethod || 'cod',
+                    instructions: details.instructions || ''
+                },
+                status: 'Order received'
+            };
+
+            storeOrderRecord(orderRecord);
+            showOrderConfirmation(orderRecord);
+            sendOrderToFormspree(this, orderRecord);
+
+            cart = [];
+            saveCart();
+            updateCart();
+            loadProducts();
+            renderQuickOrder();
+            showNotification(`Order ${orderRecord.id} placed successfully. Cart cleared.`);
+
+            return false;
         });
         
         // Navbar Scroll Effect
@@ -953,6 +1334,8 @@
         $(document).ready(function() {
             updateCart();
             loadProducts();
+            renderQuickOrder();
+            updateOrderSteps();
             
             // Set default selections
             $('.delivery-option[data-time="morning"]').addClass('selected');
